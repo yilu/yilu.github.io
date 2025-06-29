@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arXiv Curator | 1-01-01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMcAXPbeZQMNlbAEQZdjeEqQeeyLSpPDayciONa03urlgXHzX" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose { max-width: 65ch; }
+        .prose p { margin-top: 0; margin-bottom: 1em; }
+        .reason-card { transition: background-color 0.2s ease-in-out; }
+        .reason-card:hover { background-color: #f0f9ff; }
+        .control-btn.active {
+            background-color: #2563eb;
+            color: white;
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="text-gray-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Navigation -->
+        <nav class="w-full md:w-64 bg-white border-r border-gray-200 p-4 md:p-6 md:sticky top-0 h-screen overflow-y-auto">
+            <h1 class="text-2xl font-bold text-gray-900 mb-6">arXiv Curator</h1>
+            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Archives</h2>
+            <ul class="space-y-2">
+                
+                <li>
+                    <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                        
+                            text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                        ">
+                        2025-06
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="1-01-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                        
+                            bg-blue-100 text-blue-700 font-semibold
+                        ">
+                        1-01-01
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-10">
+            <div class="max-w-4xl mx-auto">
+                <header class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Papers for 1-01-01</h2>
+                    <div class="text-sm text-gray-500 mt-2 space-y-1">
+                        <p>Last updated: 2025-06-29 10:46:57 UTC.
+                           
+                        </p>
+                        
+                    </div>
+                </header>
+
+                <!-- Controls Section -->
+                <div id="controls-container" class="mb-8 p-4 bg-white rounded-lg shadow-sm border border-gray-200 space-y-4">
+                    <!-- Search Bar -->
+                    <div>
+                        <label for="search-input" class="text-sm font-semibold text-gray-700 mb-2 block">Search Papers</label>
+                        <input type="text" id="search-input" placeholder="Search by title, author, abstract..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Sorting -->
+                    <div id="sort-container">
+                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Sort by:</h4>
+                        <div class="flex flex-wrap gap-2">
+                             <button class="control-btn sort-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300 active" data-sort-by="score">LLM Score</button>
+                             <button class="control-btn sort-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-sort-by="date">Date</button>
+                        </div>
+                    </div>
+
+                    <!-- Filters -->
+                    <div id="filter-container">
+                        <div class="mb-4">
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Category:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Keyword:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="density matrix renormalization group">density matrix renormalization group</button>
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="green's function">green's function</button>
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="hubbard model">hubbard model</button>
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="machine learning">machine learning</button>
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural network">neural network</button>
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nonequilibrium">nonequilibrium</button>
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="pump-probe">pump-probe</button>
+                                
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="tensor network">tensor network</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <button id="clear-filters" class="mt-4 text-xs text-blue-600 hover:underline">Clear All Filters</button>
+                </div>
+
+
+                <div id="papers-list" class="space-y-8">
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="green's function"
+                             data-score="0.8"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.17386v1" target="_blank" class="hover:text-blue-600">Quantum Geometric Origin of the Intrinsic Nonlinear Hall Effect</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.17386v1&paper_details=Like%20paper%3A%20Quantum%20Geometric%20Origin%20of%20the%20Intrinsic%20Nonlinear%20Hall%20Effect" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.17386v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.800</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-17386-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-17386-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We analyze the quantum geometric contribution to the intrinsic second-order nonlinear Hall effect (NLHE) for a general multiband Hamiltonian. The nonlinear conductivity, obtained in Green's function formalism, is decomposed into its quantum geometric constituents using a projector-based approach. In addition to the previously identified Berry curvature and interband quantum metric dipoles, we obtain a third term of quantum geometric origin, given by the momentum derivative of the $intraband$ quantum metric. This contribution, which we term the intraband quantum metric dipole, provides substantial corrections to the NLHE in topological magnets and becomes the dominant geometric term in topological antiferromagnets with gapped Dirac cones. Considering generalized 2D and 3D Weyl/Dirac Hamiltonians, describing a large class of topological band crossings with sizable quantum geometry, we derive analytical expressions of the NLHE, thereby revealing the individual contributions of the three quantum geometric terms. Combined with an exhaustive symmetry classification of all magnetic space groups, this analysis leads to the identification of several candidate materials expected to exhibit large intrinsic NLHE, including the antiferromagnets $\text{Yb}_3\text{Pt}_4$, $\text{CuMnAs}$, and $\text{CoNb}_3\text{S}_6$, as well as the nodal-plane material $\text{MnNb}_3\text{S}_6$. Finally, our projector-based approach yields a compact expression for the NLHE in terms of momentum derivatives of the Bloch Hamiltonian matrix alone, enabling efficient numerical evaluation of each contribution in the aforementioned materials.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">green's function</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Nonlinear Hall effect</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Quantum geometry</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Topological antiferromagnets</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses topological materials and Dirac cones, aligning with the user's interest in Dirac fermions, topological materials, and unconventional superconductivity, particularly in nickelates and cuprates."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="hubbard model"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.19211v1" target="_blank" class="hover:text-blue-600">Hidden Bose-Einstein Singularities in Correlated Electron Systems: III. Thermodynamic Signals</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.19211v1&paper_details=Like%20paper%3A%20Hidden%20Bose-Einstein%20Singularities%20in%20Correlated%20Electron%20Systems%3A%20III.%20Thermodynamic%20Signals" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.19211v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-19211-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-19211-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We study thermodynamic consequences of the hidden Bose-Einstein singularities, which have been predicted to cause a pseudogap phase, based on quantum field theory of ordered phases. Starting from the Luttinger-Ward functional for the grand thermodynamic potential, we derive expressions of the Helmholtz free energy, internal energy, entropy, and heat capacity in a form suitable for numerical studies. They are applied to the weakly attractive Hubbard model in three dimensions to calculate the thermodynamic potentials numerically and continuously for the normal, pseudogap, and superconducting phases on the same footing. It is shown that the entry into the pseudogap phase is detectable as singularities of thermodynamic potentials, especially a discontinuity in the heat capacity.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hubbard model</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pseudogap Phase</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Thermodynamic Potentials</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Hubbard Model</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"This paper explores correlated electron systems and phase transitions, aligning with the user's interest in superconductivity and related materials."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="green's function"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.18984v1" target="_blank" class="hover:text-blue-600">Strong Correlations, Green's Function Zeros and Topological Transitions in Orbital-Symmetry-Controlled Chemical Reactions</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.18984v1&paper_details=Like%20paper%3A%20Strong%20Correlations%2C%20Green%27s%20Function%20Zeros%20and%20Topological%20Transitions%20in%20Orbital-Symmetry-Controlled%20Chemical%20Reactions" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.18984v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-18984-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-18984-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We integrate concepts from topological band theory and strong-correlation physics with the principle of orbital symmetry conservation, which characterizes reactions as symmetry allowed or forbidden based on whether molecular orbitals cross along the reaction coordinate. Using a $4\pi$ electrocyclization as an example, we show how Green's functions generalize the concepts of symmetry allowed and symmetry forbidden reactions even in the presence of strong multi-reference correlations. We demonstrate how symmetry forbidden reactions are characterized by strong multi-reference correlations, resulting in crossings of Green's function zeros rather than poles as MO-theory would predict. Taking into account Green's functions zeros, a topological invariant is introduced that captures symmetry protected crossings of poles or zeros. We discuss the effects of symmetry breaking and outline generalizations of our approach to reactions without any conserved spatial symmetries along the reaction path. Our work lays the groundwork for systematic application of modern topological methods to chemical reactions and can be generalized to reactions involving different spin states or to excited states.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">green's function</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Green's function zeros</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">orbital symmetry conservation</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">topological invariant</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses strong correlations and topological transitions, which are relevant to previously liked papers on correlated materials, topological semimetals, and nickelate superconductors."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="hubbard model"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.17015v1" target="_blank" class="hover:text-blue-600">Simulating Correlated Electrons with Symmetry-Enforced Normalizing Flows</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.17015v1&paper_details=Like%20paper%3A%20Simulating%20Correlated%20Electrons%20with%20Symmetry-Enforced%20Normalizing%20Flows" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.17015v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-17015-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-17015-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We present the first proof of principle that normalizing flows can accurately learn the Boltzmann distribution of the fermionic Hubbard model - a key framework for describing the electronic structure of graphene and related materials. State-of-the-art methods like Hybrid Monte Carlo often suffer from ergodicity issues near the time-continuum limit, leading to biased estimates. Leveraging symmetry-aware architectures as well as independent and identically distributed sampling, our approach resolves these issues and achieves significant speed-ups over traditional methods.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hubbard model</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">normalizing flows</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">fermionic Hubbard model</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">symmetry-aware architectures</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses the fermionic Hubbard model, which is relevant to correlated electron systems and materials like graphene, aligning with the user's interest in dynamical mean-field theory and superconductors."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="hubbard model"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.15669v1" target="_blank" class="hover:text-blue-600">Kinetic magnetism in the crossover between the square and triangular lattice Fermi-Hubbard models</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.15669v1&paper_details=Like%20paper%3A%20Kinetic%20magnetism%20in%20the%20crossover%20between%20the%20square%20and%20triangular%20lattice%20Fermi-Hubbard%20models" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.15669v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-15669-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-15669-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We calculate the spin correlations that result from the motion of a single dopant in the hard-core Fermi-Hubbard model, as the geometry evolves from a square to a triangular lattice. In particular, we consider the square lattice with an additional hopping along one diagonal, whose strength is continuously varied. We use a high-temperature expansion which expresses the partition function as a sum over closed paths taken by the dopant. We sample thousands of diagrams in the space of closed paths using the quantum Monte Carlo approach of Raghavan and Elser [1,2], which is free of finite-size effects and allows us to simulate temperatures as low as $T \sim 0.3|t|$, even in cases where there is a sign problem. For the case of a hole dopant, we find a crossover from kinetic ferromagnetism to kinetic antiferromagnetism as the geometry is tuned from square to triangular, which can be observed in current quantum gas microscopes.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hubbard model</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Fermi-Hubbard model</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">kinetic magnetism</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">quantum Monte Carlo</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses the Fermi-Hubbard model, which is relevant to the user's interest in correlated electron systems and unconventional superconductivity, particularly given their previous interest in nickelates and cuprates."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="hubbard model"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.14703v1" target="_blank" class="hover:text-blue-600">Zigzag antiferromagnets in the SU(3) Hubbard model on the square lattice</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.14703v1&paper_details=Like%20paper%3A%20Zigzag%20antiferromagnets%20in%20the%20SU%283%29%20Hubbard%20model%20on%20the%20square%20lattice" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.14703v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-14703-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-14703-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>SU(N) Hubbard models exhibit a rich variety of phases, which may be realized through quantum simulation with ultracold atomic gases in optical lattices. In this work we study the Mott insulating phases of the SU(3) Hubbard model at 1/3-filling using infinite projected entangled-pair states, optimized with both imaginary time evolution and variational optimization. In the limit of strong interactions we reproduce the antiferromagnetic 3-sublattice ordered state previously identified in the SU(3) Heisenberg model. At intermediate interaction strength we find antiferromagnetic states exhibiting zigzag patterns of different lengths, in agreement with previous Hartree-Fock and constrained-path auxiliary-field quantum Monte Carlo calculations. We study the color order parameter and energy anisotropy, which are discontinuous across the phase transitions. Finally, we analyze the different energy contributions in two competing phases, identifying low-energy bonds at the corners of the zigzag that help stabilize the zigzag states.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hubbard model</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">SU(3) Hubbard model</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">zigzag antiferromagnets</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">projected entangled-pair states</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses antiferromagnetism and Hubbard models, which are relevant to the user's interest in unconventional superconductivity and correlated electron systems."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="density matrix renormalization group"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.12391v1" target="_blank" class="hover:text-blue-600">Simulating the Antiferromagnetic Heisenberg Model on a Spin-Frustrated Kagome Lattice with the Contextual Subspace Variational Quantum Eigensolver</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.12391v1&paper_details=Like%20paper%3A%20Simulating%20the%20Antiferromagnetic%20Heisenberg%20Model%20on%20a%20Spin-Frustrated%20Kagome%20Lattice%20with%20the%20Contextual%20Subspace%20Variational%20Quantum%20Eigensolver" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.12391v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-12391-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-12391-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>In this work we investigate the ground state properties of a candidate quantum spin liquid using a superconducting Noisy Intermediate-Scale Quantum (NISQ) device. Specifically, we study the antiferromagnetic Heisenberg model on a Kagome lattice, a geometrically frustrated structure that gives rise to a highly degenerate energy spectrum. To successfully simulate this system, we employ a qubit reduction strategy leveraging the Contextual Subspace methodology, significantly reducing the problem size prior to execution on the quantum device. We improve the quality of these subspaces by using the wavefunctions obtained from low bond dimension Density Matrix Renormalization Group (DMRG) calculations to bias the subspace stabilizers through a symplectic approximate symmetry generator extraction algorithm. Reducing the Hamiltonian size allows us to implement tiled circuit ensembles and deploy the Variational Quantum Eigensolver (VQE) to estimate the ground state energy. We adopt a hybrid quantum error mitigation strategy combining Readout Error Mitigation (REM), Symmetry Verification (SV) and Zero Noise Extrapolation (ZNE). This approach yields high-accuracy energy estimates, achieving error rates on the order of 0.01% and thus demonstrating the potential of near-term quantum devices for probing frustrated quantum materials.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">density matrix renormalization group</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Kagome lattice</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Quantum spin liquid</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Variational Quantum Eigensolver</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"This paper investigates quantum materials using quantum computing techniques, aligning with the user's interest in unconventional superconductivity and related theoretical methods."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="neural network"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.11222v1" target="_blank" class="hover:text-blue-600">Many-Body Neural Network Wavefunction for a Non-Hermitian Ising Chain</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.11222v1&paper_details=Like%20paper%3A%20Many-Body%20Neural%20Network%20Wavefunction%20for%20a%20Non-Hermitian%20Ising%20Chain" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.11222v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-11222-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-11222-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Non-Hermitian (NH) quantum systems have emerged as a powerful framework for describing open quantum systems, non-equilibrium dynamics, and engineered quantum optical materials. However, solving the ground-state properties of NH systems is challenging due to the exponential scaling of the Hilbert space, and exotic phenomena such as the emergence of exceptional points. Another challenge arises from the limitations of traditional methods like exact diagonalization (ED). For the past decade, neural networks (NN) have shown promise in approximating many-body wavefunctions, yet their application to NH systems remains largely unexplored. In this paper, we explore different NN architectures to investigate the ground-state properties of a parity-time-symmetric, one-dimensional NH, transverse field Ising model with a complex spectrum by employing a recurrent neural network (RNN), a restricted Boltzmann machine (RBM), and a multilayer perceptron (MLP). We construct the NN-based many-body wavefunctions and validate our approach by recovering the ground-state properties of the model for small system sizes, finding excellent agreement with ED. Furthermore, for larger system sizes, we demonstrate that the RNN outperforms both the RBM and MLP. However, we show that the accuracy of the RBM and MLP can be significantly improved through transfer learning, allowing them to perform comparably to the RNN for larger system sizes. These results highlight the potential of neural network-based approaches--particularly for accurately capturing the low-energy physics of NH quantum systems.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">neural network</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Non-Hermitian systems</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Neural network wavefunction</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Parity-time symmetry</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses a non-Hermitian system, which is related to the previous interest in -Symmetric Real Dirac Fermions and Semimetals, and uses neural networks, a modern method for solving complex physics problems."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.20605v1" target="_blank" class="hover:text-blue-600">Modeling phase transformations in Mn-rich disordered rocksalt cathodes with charge-informed machine-learning interatomic potentials</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.20605v1&paper_details=Like%20paper%3A%20Modeling%20phase%20transformations%20in%20Mn-rich%20disordered%20rocksalt%20cathodes%20with%20charge-informed%20machine-learning%20interatomic%20potentials" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.20605v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-20605-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-20605-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Mn-rich disordered rocksalt (DRX) cathode materials exhibit a phase transformation from a disordered to a partially disordered spinel-like structure ($\delta$-phase) during electrochemical cycling. In this computational study, we used charge-informed molecular dynamics with a fine-tuned CHGNet foundation potential to investigate the phase transformation in Li$_{x}$Mn$_{0.8}$Ti$_{0.1}$O$_{1.9}$F$_{0.1}$. Our results indicate that transition metal migration occurs and reorders to form the spinel-like ordering in an FCC anion framework. The transformed structure contains a higher concentration of non-transition metal (0-TM) face-sharing channels, which are known to improve Li transport kinetics. Analysis of the Mn valence distribution suggests that the appearance of tetrahedral Mn$^{2+}$ is a consequence of spinel-like ordering, rather than the trigger for cation migration as previously believed. Calculated equilibrium intercalation voltage profiles demonstrate that the $\delta$-phase, unlike the ordered spinel, exhibits solid-solution signatures during the 0-TM to Li$_{\text{tet}}$ conversion reaction. A higher Li capacity is obtained than in the DRX phase. This study provides atomic insights into solid-state phase transformation and its relation to experimental electrochemistry, highlighting the potential of charge-informed machine learning interatomic potentials for understanding complex oxide materials.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">disordered rocksalt cathodes</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">charge-informed machine learning</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">phase transformation</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper investigates phase transformations in complex oxides using computational methods, which aligns with the user's interest in oxygen vacancies, topotactic hydrogen, and correlated electron systems in similar materials."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="nonequilibrium"
+                             data-score="0.75"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.19040v1" target="_blank" class="hover:text-blue-600">Discovery of magnon self-interaction in a strongly driven antiferromagnet</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.19040v1&paper_details=Like%20paper%3A%20Discovery%20of%20magnon%20self-interaction%20in%20a%20strongly%20driven%20antiferromagnet" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.19040v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.750</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-19040-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-19040-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Nonlinear dynamics govern a wide array of natural phenomena and are essential for understanding nonequilibrium behaviors in condensed matter systems. In magnetically ordered materials, magnons - the quanta of spin waves - exhibit intrinsic nonlinearities that are of great interest in fundamental research and practical applications. Despite progress in the nonlinear control of magnon modes in antiferromagnetic materials, the transition from perturbative to non-perturbative regimes of magnon coherences has remained elusive. Here, we explore the nonlinear dynamics of a magnon mode in an antiferromagnet using two-dimensional terahertz spectroscopy with waveguide-enhanced terahertz fields. By driving the magnon mode far from equilibrium, we demonstrate the emergence of high-order magnon coherences and delineate a distinct transition into non-perturbative magnon nonlinearities. This behavior originates from the intrinsic anharmonicity of the magnetic potential and marks a regime dominated by magnon self-interactions at large spin deflection angles. These findings provide fundamental mechanistic insights that might be exploited for ultrafast switching and other advanced magnonic applications.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">nonequilibrium</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">magnon self-interaction</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">nonlinear dynamics</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">antiferromagnet</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper explores nonlinear dynamics and magnon behavior in antiferromagnetic materials, which aligns with the user's interest in unconventional superconductors and related phenomena like Dirac fermions and oxygen vacancies in correlated electron systems."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="hubbard model"
+                             data-score="0.7"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.18709v1" target="_blank" class="hover:text-blue-600">Local classical correlations between physical electrons in the Hubbard model</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.18709v1&paper_details=Like%20paper%3A%20Local%20classical%20correlations%20between%20physical%20electrons%20in%20the%20Hubbard%20model" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.18709v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-18709-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-18709-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We demonstrate that the local nonfreeness, an unbiased measure of correlation between electrons at a single lattice site, can be computed as the mutual information between local natural spin orbitals. Using this concept, we prove that local electron correlations in the Hubbard model are fully classical: in the natural basis the local reduced density matrix is separable and no quantum correlations beyond entanglement are present. Finally, we compare different theoretical descriptions of magnetic and nonmagnetic states, showing that local classical correlations are drastically influenced by nonlocal processes. Our results confirm the relation between local classical correlations within an open system and the nonlocal correlations with its quantum environment.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hubbard model</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Hubbard model</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">electron correlations</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">mutual information</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses electron correlations in the Hubbard model, a topic relevant to understanding the behavior of correlated electron systems similar to the cuprates and nickelates in the user's liked papers."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="hubbard model"
+                             data-score="0.7"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.16503v1" target="_blank" class="hover:text-blue-600">Mixed phases in a Fermi--Hubbard model describing altermagnetism</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.16503v1&paper_details=Like%20paper%3A%20Mixed%20phases%20in%20a%20Fermi--Hubbard%20model%20describing%20altermagnetism" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.16503v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-16503-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-16503-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We study an extension of the 2D Fermi--Hubbard model, which was recently introduced in [Das et al., Phys. Rev. Lett. 132, 263402 (2024)] and shown to describe altermagnetism that can be studied in cold atom systems. Using an updated Hartree--Fock method that can detect instabilities towards phase separation, we show that the model is in a mixed phase in large parts of the parameter regime at half-filling. We argue that the occurrence of a mixed phase is an indication of exotic physics which, in this model, occurs in parameter regimes accessible in cold atom experiments.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hubbard model</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Fermi-Hubbard model</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">altermagnetism</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">mixed phase</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper explores the Fermi-Hubbard model, relevant to strongly correlated electron systems and potentially related to the user's interest in superconductivity and magnetism in materials like nickelates and cuprates."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="green's function"
+                             data-score="0.7"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.15661v1" target="_blank" class="hover:text-blue-600">Anisotropic Josephson coupling of d-vectors arising from interplay with frustrated spin textures</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.15661v1&paper_details=Like%20paper%3A%20Anisotropic%20Josephson%20coupling%20of%20d-vectors%20arising%20from%20interplay%20with%20frustrated%20spin%20textures" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.15661v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-15661-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-15661-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>We propose a Cooper pair analogue of Dzyaloshinskii-Moriya's anisotropic coupling for $d$-vectors in an inhomogeneous unconventional superconductor, which can arise when itinerant electrons couple to a local exchange field of frustrated spin moments. Using perturbative Green's function methods, we examine an $s$-$d$ model on a geometrically frustrated lattice with noncollinear spin texture that breaks time-reversal and parity symmetries, leading to spin-triplet pairing correlations. The effective Josephson tunneling in the presence of such an exchange field leads to an anisotropic Josephson coupling between $d$-vectors, which prefers a spatially inhomogeneous pairing order. Furthermore, we discuss anomalous vortices arising from the spatially inhomogeneous $d$-vector in the absence of a magnetic field for nonunitary triplet pairing order. We also propose a Josephson diode effect in which the diode efficiency is proportional to the spin chirality of the local exchange field. Our results can help understand the experiments in superconducting proximitized Mn$_3$Ge and in 4Hb-TaS$_2$.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">green's function</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">anisotropic Josephson coupling</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">frustrated spin textures</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">triplet pairing</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses unconventional superconductivity and Josephson coupling, relating to the user's interest in superconductivity and correlated electron systems."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="pump-probe"
+                             data-score="0.7"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.13683v1" target="_blank" class="hover:text-blue-600">Observing the Birth of Rydberg Exciton Fermi Polarons on a Moire Fermi Sea</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.13683v1&paper_details=Like%20paper%3A%20Observing%20the%20Birth%20of%20Rydberg%20Exciton%20Fermi%20Polarons%20on%20a%20Moire%20Fermi%20Sea" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.13683v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-13683-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-13683-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>The optical spectra of two-dimensional (2D) semiconductors are dominated by tightly bound excitons and trions. In the low doping limit, trions are often described as three-body quasiparticles consisting of two electrons and one hole or vice versa. However, trions are more rigorously understood as quasiparticles arising from the interaction between an exciton and excitation of the Fermi sea - referred to as exciton Fermi polaron. Here we employ pump-probe spectroscopy to directly observe the formation of exciton Fermi polarons in a model system composed of a WSe2 monolayer adjacent to twisted bilayer graphene (tBLG). Following the pump-injection of Rydberg excitons in WSe2, a time-delayed probe pulse tracks the development of Rydberg exciton Fermi polarons as interactions with localized carriers in the tBLG moire superlattice evolve. Both the exciton Fermi polaron relaxation rate and binding energy are found to increase with electron or hole density. Our findings provide insight into the optical response of fundamental excitations in 2D Van der Waals systems and reveal how many-body interactions give rise to emergent quasiparticles.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">pump-probe</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Rydberg exciton Fermi polarons</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Moire Fermi sea</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">2D semiconductors</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper discusses emergent quasiparticles in 2D materials, specifically exciton Fermi polarons, which relates to the user's interest in novel quantum materials and phenomena like Dirac fermions and superconductivity."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="tensor network"
+                             data-score="0.5"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.20106v1" target="_blank" class="hover:text-blue-600">Algorithms for variational Monte Carlo calculations of fermion PEPS in the swap gates formulation</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.20106v1&paper_details=Like%20paper%3A%20Algorithms%20for%20variational%20Monte%20Carlo%20calculations%20of%20fermion%20PEPS%20in%20the%20swap%20gates%20formulation" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.20106v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.500</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-20106-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-20106-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>In recent years, the variational Monte Carlo (VMC) calculations of projected entangled pair states (PEPS) has emerged as a competitive method for computing the ground states of many-body quantum systems. This method is particularly important for fermion systems where sign problems are abundant. We derive and explain the algorithms for the VMC calculations of fermion PEPS in the swap gates formulation. It is the purpose of this paper to be as concise and precise as possible. Diagramatic tensor notation is used whenever possible to serve this purpose. As a separate result, we prove the detailed balance of sequential sampling of tensor networks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">tensor network</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">variational Monte Carlo</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">fermion PEPS</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">swap gates formulation</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the user has shown interest in unconventional superconductivity and related materials, this paper focuses on a computational method (VMC for fermion PEPS) that, while potentially applicable, is not a direct thematic match, thus the moderate score."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning"
+                             data-score="0.5"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.19595v1" target="_blank" class="hover:text-blue-600">Machine Learning Accelerates Raman Computations from Molecular Dynamics for Materials Science</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.19595v1&paper_details=Like%20paper%3A%20Machine%20Learning%20Accelerates%20Raman%20Computations%20from%20Molecular%20Dynamics%20for%20Materials%20Science" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.19595v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.500</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-19595-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-19595-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Raman spectroscopy is a powerful experimental technique for characterizing molecules and materials that is used in many laboratories. First-principles theoretical calculations of Raman spectra are important because they elucidate the microscopic effects underlying Raman activity in these systems. These calculations are often performed using the canonical harmonic approximation which cannot capture certain thermal changes in the Raman response. Anharmonic vibrational effects were recently found to play crucial roles in several materials, which motivates theoretical treatments of the Raman effect beyond harmonic phonons. While Raman spectroscopy from molecular dynamics (MD-Raman) is a well-established approach that includes anharmonic vibrations and further relevant thermal effects, MD-Raman computations were long considered to be computationally too expensive for practical materials computations. In this perspective article, we highlight that recent advances in the context of machine learning have now dramatically accelerated the involved computational tasks without sacrificing accuracy or predictive power. These recent developments highlight the increasing importance of MD-Raman and related methods as versatile tools for theoretical prediction and characterization of molecules and materials.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">MD-Raman</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Raman Spectroscopy</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the user's liked papers are mostly about superconductivity and electronic structure, this paper's focus on using machine learning to accelerate materials computations, including Raman spectroscopy, aligns with the broader theme of materials characterization and computational methods, suggesting moderate relevance."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="green's function,nonequilibrium"
+                             data-score="0.4"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.21366v1" target="_blank" class="hover:text-blue-600">Computational Design of Two-Dimensional MoSi$_2$N$_4$ Family Field-Effect Transistor for Future Ångström-Scale CMOS Technology Nodes</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.21366v1&paper_details=Like%20paper%3A%20Computational%20Design%20of%20Two-Dimensional%20MoSi%24_2%24N%24_4%24%20Family%20Field-Effect%20Transistor%20for%20Future%20%C3%85ngstr%C3%B6m-Scale%20CMOS%20Technology%20Nodes" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.21366v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.400</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-21366-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-21366-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Advancing complementary metal-oxide-semiconductor (CMOS) technology into the sub-1-nm angstr\"om-scale technology nodes is expected to involve alternative semiconductor channel materials, as silicon transistors encounter severe performance degradation at physical gate lengths below 10 nm. Two-dimensional (2D) semiconductors have emerged as strong candidates for overcoming short-channel effects due to their atomically thin bodies, which inherently suppress electrostatic leakage and improve gate control in aggressively scaled field-effect transistors (FETs). Among the growing library of 2D materials, the MoSi$_2$N$_4$ family -- a synthetic septuple-layered materials -- has attracted increasing attention for its remarkable ambient stability, suitable bandgaps, and favorable carrier transport characteristics, making it a promising platform for next-generation transistors. While experimental realization of sub-10-nm 2D FETs remains technologically demanding, computational device simulation using first-principles density functional theory combined with nonequilibrium Green's function transport simulations provide a powerful and cost-effective route for exploring the performance limits and optimal design of ultrascaled FET. This review consolidates the current progress in the computational design of MoSi$_2$N$_4$ family FETs. We review the physical properties of MoSi$_2$N$_4$ that makes them compelling candidates for transistor applications, as well as the simulated device performance and optimization strategy of MoSi$_2$N$_4$ family FETs. Finally, we identify key challenges and research gaps, and outline future directions that could accelerate the practical deployment of MoSi$_2$N$_4$ family FET in the angstr\"om-scale CMOS era.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">green's function</span>
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">nonequilibrium</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">MoSi2N4</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">2D materials</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">field-effect transistors</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"This paper focuses on computational design and properties of 2D materials, specifically MoSi2N4, for use in transistors, which is somewhat related to the user's interest in novel materials and electronic properties, although the connection is not as strong as with superconductors or strongly correlated electron systems."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning"
+                             data-score="0.4"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.18774v1" target="_blank" class="hover:text-blue-600">Leveraging Transfer Learning to Overcome Data Limitations in Czochralski Crystal Growth</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.18774v1&paper_details=Like%20paper%3A%20Leveraging%20Transfer%20Learning%20to%20Overcome%20Data%20Limitations%20in%20Czochralski%20Crystal%20Growth" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.18774v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.400</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-18774-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-18774-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>The Czochralski (Cz) method is a widely used process for growing high-quality single crystals, critical for applications in semiconductors, optics, and advanced materials. Achieving optimal growth conditions requires precise control of process and furnace design parameters. Still, data scarcity -- especially for new materials -- limits the application of machine learning (ML) in predictive modeling and optimization. This study proposes a transfer learning approach to overcome this limitation by adapting ML models trained on a higher data volume of one source material (Si) to a lower data volume of another target material (Ge and GaAs). The materials were deliberately selected to assess the robustness of the transfer learning approach in handling varying data similarity, with Cz-Ge being similar to Cz-Si, and GaAs grown via the liquid encapsulated Czochralski method (LEC), which differs from Cz-Si. We explore various transfer learning strategies, including Warm Start, Merged Training, and Hyperparameters Transfer, and evaluate multiple ML architectures across two different materials. Our results demonstrate that transfer learning significantly enhances predictive accuracy with minimal data, providing a practical framework for optimizing Cz growth parameters across diverse materials.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Czochralski method</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">transfer learning</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">crystal growth optimization</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper focuses on materials science and crystal growth, a field that overlaps with the user's interest in advanced materials like nickelates and cuprates, although the specific materials and methods differ."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning"
+                             data-score="0.4"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.18342v1" target="_blank" class="hover:text-blue-600">Wide-field Hyperspectral Optical Microscopy for Rapid Characterization of Two-Dimensional Semiconductors and Heterostructures</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.18342v1&paper_details=Like%20paper%3A%20Wide-field%20Hyperspectral%20Optical%20Microscopy%20for%20Rapid%20Characterization%20of%20Two-Dimensional%20Semiconductors%20and%20Heterostructures" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.18342v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.400</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-18342-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-18342-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Electronic and optoelectronic applications of two-dimensional (2D) semiconductors demand precise control over material quality, including thickness, composition, doping, and defect density. Conventional benchmarking methods (e.g., charge transport, confocal mapping, electron or scanning probe microscopy) are slow, perturb sample quality, or involve trade-offs between speed, resolution, and scan area. To accelerate assessment of 2D semiconductors, we demonstrate a broadband, wide-field hyperspectral optical microscope for 2D materials (2D-HOM) that rapidly captures a spatial-spectral data cube within seconds. The data cube includes x-y spatial coordinate (a 300 * 300 $\mu\mathrm{m}^2$ field, with ~ 1 $\mu\mathrm{m}$ resolution) and a selectable wavelength range between 1100 to 200 nm at each pixel. Using synthesized films and heterostructures of transition metal dichalcogenides ($\mathrm{MoS}_{2}$, $\mathrm{WS}_{2}$, $\mathrm{V}_{x}\mathrm{W}_{1-x}\mathrm{S}_{2}$, and $\mathrm{WSe}_{2}$), we show that this cost-effective technique detects spectral fingerprints of material identity, doping, grain boundaries, and alloy composition, and enables advanced analysis, including unsupervised machine learning for spatial segmentation.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hyperspectral microscopy</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">2D semiconductors</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">material characterization</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the user is interested in superconductivity and exotic electronic states, this paper focuses on characterization techniques for 2D semiconductors, a related but distinct area."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="nonequilibrium"
+                             data-score="0.3"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.16424v1" target="_blank" class="hover:text-blue-600">Pseudocriticality in antiferromagnetic spin chains</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.16424v1&paper_details=Like%20paper%3A%20Pseudocriticality%20in%20antiferromagnetic%20spin%20chains" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.16424v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.300</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-16424-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-16424-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Weak first-order pseudocriticality with approximate scale invariance has been observed in a variety of settings, including the intriguing case of deconfined criticality in 2+1 dimensions. Recently, this has been interpreted as extremely slow flows ("walking behavior") for real-valued couplings in proximity to a bona fide critical point with complex-valued couplings, described by a complex conformal field theory (CFT). Here we study an SU($N$) generalization of the the Heisenberg antiferromagnet, which is a familiar model for deconfined criticality in 2+1 dimensions. We show that in 1+1 dimensions the model is located near a complex CFT, whose proximity can be tuned as a function of $N$. We employ state-of-the-art quantum Monte Carlo simulations for continuous $N$ along with an improved loop estimator for the R\'{e}nyi entanglement entropy based on a nonequilibrium work protocol. These techniques allow us to track the central charge of this model in detail as a function of $N$, where we observe excellent agreement with CFT predictions. Notably, this includes the region $N>2$, where the CFT moves into the complex plane and pseudocritical drifts enable us to recover the real part of the complex central charge with remarkable accuracy. Since the present model with $N=3$ is also equivalent to the spin-1 biquadratic model, our work sheds new light on the dimerized phase of the spin-1 chain, demonstrating that it is pseudocritical and proximate to a complex CFT.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">nonequilibrium</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">complex CFT</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">quantum Monte Carlo</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">pseudocriticality</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While this paper focuses on spin chains and antiferromagnetism, which are not directly related to the user's previous interests in superconductivity and nickelates, the mention of complex conformal field theory (CFT) and quantum Monte Carlo methods might be of tangential interest."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning"
+                             data-score="0.3"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.19674v1" target="_blank" class="hover:text-blue-600">Massive Atomic Diversity: a compact universal dataset for atomistic machine learning</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.19674v1&paper_details=Like%20paper%3A%20Massive%20Atomic%20Diversity%3A%20a%20compact%20universal%20dataset%20for%20atomistic%20machine%20learning" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.19674v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.300</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-19674-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-19674-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>The development of machine-learning models for atomic-scale simulations has benefited tremendously from the large databases of materials and molecular properties computed in the past two decades using electronic-structure calculations. More recently, these databases have made it possible to train universal models that aim at making accurate predictions for arbitrary atomic geometries and compositions. The construction of many of these databases was however in itself aimed at materials discovery, and therefore targeted primarily to sample stable, or at least plausible, structures and to make the most accurate predictions for each compound - e.g. adjusting the calculation details to the material at hand. Here we introduce a dataset designed specifically to train machine learning models that can provide reasonable predictions for arbitrary structures, and that therefore follows a different philosophy. Starting from relatively small sets of stable structures, the dataset is built to contain massive atomic diversity (MAD) by aggressively distorting these configurations, with near-complete disregard for the stability of the resulting configurations. The electronic structure details, on the other hand, are chosen to maximize consistency rather than to obtain the most accurate prediction for a given structure, or to minimize computational effort. The MAD dataset we present here, despite containing fewer than 100k structures, has already been shown to enable training universal interatomic potentials that are competitive with models trained on traditional datasets with two to three orders of magnitude more structures. We describe in detail the philosophy and details of the construction of the MAD dataset. We also introduce a low-dimensional structural latent space that allows us to compare it with other popular datasets and that can be used as a general-purpose materials cartography tool.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">atomic machine learning</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">universal interatomic potentials</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">materials cartography</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the user has shown interest in superconductivity and related materials, this paper focuses on a dataset for training machine learning models in atomistic simulations, which is a methodological rather than a materials-specific topic, making it somewhat less relevant."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="neural network"
+                             data-score="0.3"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.19183v1" target="_blank" class="hover:text-blue-600">A Novel Analysis Framework for Microstructural Characterization of Ferroelectric Hafnia: Experimental Validation and Application</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.19183v1&paper_details=Like%20paper%3A%20A%20Novel%20Analysis%20Framework%20for%20Microstructural%20Characterization%20of%20Ferroelectric%20Hafnia%3A%20Experimental%20Validation%20and%20Application" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.19183v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.300</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-19183-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-19183-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Herein, we present a novel analysis framework for grain size profile of ferroelectric hafnia to tackle critical shortcomings inherent in the current microstructural analysis. We vastly enhanced visibility of grains with ion beam treatment and performed accurate grain segmentation using deep neural network (DNN). By leveraging our new method, we discovered unexpected discrepancies that contradict previous results, such as deposition temperature (Tdep) and post-metallization annealing (PMA) dependence of grain size statistics, prompting us to reassess earlier interpretations. Combining microstructural analysis with electrical tests, we found that grain size reduction had both positive and negative outcomes: it caused significant diminishing of die-to-die variation (~68 % decrease in standard deviation) in coercive field (Ec), while triggering an upsurge in leakage current. These uncovered results signify robustness of our method in characterization of ferroelectric hafnia for in-depth examination of both device variability and reliability.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">neural network</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Ferroelectric hafnia</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Microstructural analysis</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Deep neural network</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"The paper's focus on material characterization and analysis techniques aligns with the user's interest in materials science, although the specific material (ferroelectric hafnia) and techniques (microstructural analysis, deep neural networks) are not directly related to the user's prior interests."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning,neural network"
+                             data-score="0.3"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.18497v1" target="_blank" class="hover:text-blue-600">Leveraging neural network interatomic potentials for a foundation model of chemistry</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.18497v1&paper_details=Like%20paper%3A%20Leveraging%20neural%20network%20interatomic%20potentials%20for%20a%20foundation%20model%20of%20chemistry" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.18497v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.300</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-18497-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-18497-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Large-scale foundation models, including neural network interatomic potentials (NIPs) in computational materials science, have demonstrated significant potential. However, despite their success in accelerating atomistic simulations, NIPs face challenges in directly predicting electronic properties and often require coupling to higher-scale models or extensive simulations for macroscopic properties. Machine learning (ML) offers alternatives for structure-to-property mapping but faces trade-offs: feature-based methods often lack generalizability, while deep neural networks require significant data and computational power. To address these trade-offs, we introduce HackNIP, a two-stage pipeline that leverages pretrained NIPs. This method first extracts fixed-length feature vectors (embeddings) from NIP foundation models and then uses these embeddings to train shallow ML models for downstream structure-to-property predictions. This study investigates whether such a hybridization approach, by ``hacking" the NIP, can outperform end-to-end deep neural networks, determines the dataset size at which this transfer learning approach surpasses direct fine-tuning of the NIP, and identifies which NIP embedding depths yield the most informative features. HackNIP is benchmarked on Matbench, evaluated for data efficiency, and tested on diverse tasks including \textit{ab initio}, experimental, and molecular properties. We also analyze how embedding depth impacts performance. This work demonstrates a hybridization strategy to overcome ML trade-offs in materials science, aiming to democratize high-performance predictive modeling.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">neural network</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">neural network interatomic potentials</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">foundation model</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">transfer learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the paper focuses on neural network interatomic potentials and machine learning, which are not directly related to the user's previous interests in superconductivity and electronic properties of specific materials, the application of machine learning to materials science could be of some interest."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="neural network"
+                             data-score="0.3"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.18416v1" target="_blank" class="hover:text-blue-600">Determining the grain orientations of battery materials from electron diffraction patterns using convolutional neural networks</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.18416v1&paper_details=Like%20paper%3A%20Determining%20the%20grain%20orientations%20of%20battery%20materials%20from%20electron%20diffraction%20patterns%20using%20convolutional%20neural%20networks" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.18416v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.300</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-18416-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-18416-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Polycrystalline materials have numerous applications due to their unique properties, which are often determined by the grain boundaries. Hence, quantitative characterization of grain as well as interface orientation is essential to optimize these materials, particularly energy materials. Using scanning transmission electron microscopy, matter can be analysed in an extremely fine grid of scan points via electron diffraction patterns at each scan point. By matching the diffraction patterns to a simulated database, the crystal orientation of the material as well as the orientation of the grain boundaries at each scan point can be determined. This pattern matching approach is highly time intensive. Artificial intelligence promises to be a very powerful tool for pattern recognition. In this work, we train convolutional neural networks (CNNs) on dynamically simulated diffraction patterns of LiNiO2, an important cathode-active material for Lithium-ion batteries, to predict the orientation of grains in terms of three Euler angles for the complete fundamental orientation region. Results demonstrate that these networks outperform the conventional pattern matching algorithm with increased accuracy and efficiency. The increased accuracy of the CNN models can be attributed to the fact that these models are trained by data incorporating dynamical effects. This work is the first attempt to apply deep learning for analysis of electron diffraction data and enlightens the great potential of ML to accelerate the analysis of electron microscopy data, toward high-throughput characterization technique.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">neural network</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">electron diffraction</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">convolutional neural networks</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">battery materials</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the paper focuses on materials characterization using electron microscopy and deep learning, it is applied to a battery material (LiNiO2), which has some overlap with the user's interest in correlated electron materials and oxides."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning"
+                             data-score="0.2"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.18695v1" target="_blank" class="hover:text-blue-600">Cluster Expansion Toward Nonlinear Modeling and Classification</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.18695v1&paper_details=Like%20paper%3A%20Cluster%20Expansion%20Toward%20Nonlinear%20Modeling%20and%20Classification" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.18695v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.200</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-18695-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-18695-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>A quantitative first-principles description of complex substitutional materials like alloys is challenging due to the vast number of configurations and the high computational cost of solving the quantum-mechanical problem. Therefore, materials properties must be modeled. The Cluster Expansion (CE) method is widely used for this purpose, but it struggles with properties that exhibit non-linear dependencies on composition, often failing even in a qualitative description. By looking at CE through the lens of machine learning, we resolve this severe problem and introduce a non-linear CE approach, yielding extremely accurate and computationally efficient results as demonstrated by distinct examples.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Cluster Expansion</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">materials modeling</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the paper focuses on materials modeling and computational efficiency, it does not directly relate to the specific materials or phenomena (superconductivity, vacancies, topological materials) discussed in the user's liked papers."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
+                                   "
+                             data-categories=""
+                             data-keywords="machine learning"
+                             data-score="0.05"
+                             data-date="1-01-01">
+                        <!-- Paper Header -->
+                        <div class="flex justify-between items-start gap-4">
+                             <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                <a href="https://arxiv.org/abs/2506.20839v1" target="_blank" class="hover:text-blue-600">Uncertainty-Aware Machine-Learning Framework for Predicting Dislocation Plasticity and Stress-Strain Response in FCC Alloys</a>
+                            </h3>
+                            <div class="flex-shrink-0">
+                                
+                                    <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2506.20839v1&paper_details=Like%20paper%3A%20Uncertainty-Aware%20Machine-Learning%20Framework%20for%20Predicting%20Dislocation%20Plasticity%20and%20Stress-Strain%20Response%20in%20FCC%20Alloys" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                        Like
+                                    </a>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="text-sm text-gray-600 mb-4"></div>
+                        <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <span class="font-mono">arXiv:2506.20839v1</span>
+                            <span>Published: 1-01-01</span>
+                            <span class="font-semibold text-blue-700">LLM Score: 0.050</span>
+                            
+                            <div class="flex flex-wrap gap-1">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Abstract Section -->
+                        <div class="mt-4">
+                            <button onclick="toggleAbstract('abstract-2506-20839-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                            <div id="abstract-2506-20839-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3">
+                                <p>Machine learning has significantly advanced the understanding and application of structural materials, with an increasing emphasis on integrating existing data and quantifying uncertainties in predictive modeling. This study presents a comprehensive methodology utilizing a mixed density network (MDN) model, trained on extensive experimental data from literature. This approach uniquely predicts the distribution of dislocation density, inferred as a latent variable, and the resulting stress distribution at the grain level. The incorporation of statistical parameters of those predicted distributions into a dislocation-mediated plasticity model allows for accurate stress-strain predictions with explicit uncertainty quantification. This strategy not only improves the accuracy and reliability of mechanical property predictions but also plays a vital role in optimizing alloy design, thereby facilitating the development of new materials in a rapidly evolving industry.</p>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Tags -->
+                        <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div>
+                                <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">dislocation plasticity</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span>
+                                    
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">stress-strain response</span>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Recommendation Reasons -->
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- LLM Reasoning -->
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                <p class="text-sm text-blue-900 italic">"While the user is interested in superconductivity and related materials, this paper focuses on machine learning applied to dislocation plasticity in FCC alloys, making it not relevant."</p>
+                            </div>
+                            
+
+                            <!-- Vector Similarity Matches -->
+                            
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleAbstract(id) {
+            const element = document.getElementById(id);
+            const button = event.target;
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                button.textContent = 'Hide Abstract';
+            } else {
+                element.classList.add('hidden');
+                button.textContent = 'Show Abstract';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Render LaTeX formulas
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError : false
+            });
+
+            // --- Enhanced Controls Logic ---
+            const searchInput = document.getElementById('search-input');
+            const sortContainer = document.getElementById('sort-container');
+            const filterContainer = document.getElementById('filter-container');
+            const clearButton = document.getElementById('clear-filters');
+            const papersList = document.getElementById('papers-list');
+            const paperArticles = Array.from(papersList.getElementsByClassName('paper-article'));
+
+            let activeFilters = { category: new Set(), keyword: new Set() };
+            let searchTerm = '';
+            let currentSortBy = 'score'; // Default sort
+
+            // --- Event Listeners ---
+            searchInput.addEventListener('input', (e) => {
+                searchTerm = e.target.value.toLowerCase();
+                updateDisplay();
+            });
+
+            sortContainer.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!target.classList.contains('sort-btn')) return;
+
+                document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+                target.classList.add('active');
+                currentSortBy = target.dataset.sortBy;
+                updateDisplay();
+            });
+
+            filterContainer.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!target.classList.contains('filter-btn')) return;
+
+                const filterType = target.dataset.filterType;
+                const filterValue = target.dataset.filterValue;
+                target.classList.toggle('active');
+
+                if (activeFilters[filterType].has(filterValue)) {
+                    activeFilters[filterType].delete(filterValue);
+                } else {
+                    activeFilters[filterType].add(filterValue);
+                }
+                updateDisplay();
+            });
+
+            clearButton.addEventListener('click', () => {
+                document.querySelectorAll('.control-btn.active').forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.sort-btn[data-sort-by="score"]').classList.add('active'); // Reset to default sort
+                activeFilters.category.clear();
+                activeFilters.keyword.clear();
+                searchInput.value = '';
+                searchTerm = '';
+                currentSortBy = 'score';
+                updateDisplay();
+            });
+
+            function updateDisplay() {
+                // 1. Filter
+                const visibleArticles = paperArticles.filter(article => {
+                    const articleCategories = article.dataset.categories.split(',');
+                    const articleKeywords = article.dataset.keywords.split(',');
+                    const articleText = article.textContent.toLowerCase();
+
+                    const categoryMatch = activeFilters.category.size === 0 || Array.from(activeFilters.category).every(f => articleCategories.includes(f));
+                    const keywordMatch = activeFilters.keyword.size === 0 || Array.from(activeFilters.keyword).every(f => articleKeywords.includes(f));
+                    const searchMatch = searchTerm === '' || articleText.includes(searchTerm);
+
+                    return categoryMatch && keywordMatch && searchMatch;
+                });
+
+                // 2. Sort
+                visibleArticles.sort((a, b) => {
+                    if (currentSortBy === 'score') {
+                        const scoreA = parseFloat(a.dataset.score);
+                        const scoreB = parseFloat(b.dataset.score);
+                        return scoreB - scoreA; // Descending
+                    } else if (currentSortBy === 'date') {
+                        const dateA = new Date(a.dataset.date);
+                        const dateB = new Date(b.dataset.date);
+                        return dateB - dateA; // Descending
+                    }
+                    return 0;
+                });
+
+                // 3. Re-append to DOM
+                papersList.innerHTML = '';
+                visibleArticles.forEach(article => papersList.appendChild(article));
+            }
+        });
+    </script>
+</body>
+</html>
