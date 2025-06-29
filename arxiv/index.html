@@ -15,7 +15,7 @@
         .prose p { margin-top: 0; margin-bottom: 1em; }
         .reason-card { transition: background-color 0.2s ease-in-out; }
         .reason-card:hover { background-color: #f0f9ff; }
-        .filter-btn.active {
+        .control-btn.active {
             background-color: #2563eb;
             color: white;
             box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
@@ -52,19 +52,28 @@
                 <header class="mb-8">
                     <h2 class="text-3xl font-bold text-gray-900">Papers for 2025-06</h2>
                     <div class="text-sm text-gray-500 mt-2 space-y-1">
-                        <p>Last updated: 2025-06-29 09:33:40 UTC.
+                        <p>Last updated: 2025-06-29 09:37:20 UTC.
                            
                         </p>
                         
                     </div>
                 </header>
 
-                <!-- Filter & Search Section -->
+                <!-- Controls Section -->
                 <div id="controls-container" class="mb-8 p-4 bg-white rounded-lg shadow-sm border border-gray-200 space-y-4">
                     <!-- Search Bar -->
                     <div>
                         <label for="search-input" class="text-sm font-semibold text-gray-700 mb-2 block">Search Papers</label>
                         <input type="text" id="search-input" placeholder="Search by title, author, abstract..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Sorting -->
+                    <div id="sort-container">
+                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Sort by:</h4>
+                        <div class="flex flex-wrap gap-2">
+                             <button class="control-btn sort-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300 active" data-sort-by="score">LLM Score</button>
+                             <button class="control-btn sort-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-sort-by="date">Date</button>
+                        </div>
                     </div>
 
                     <!-- Filters -->
@@ -73,39 +82,39 @@
                             <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Category:</h4>
                             <div class="flex flex-wrap gap-2">
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mes-hall">cond-mat.mes-hall</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mes-hall">cond-mat.mes-hall</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mtrl-sci">cond-mat.mtrl-sci</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mtrl-sci">cond-mat.mtrl-sci</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.quant-gas">cond-mat.quant-gas</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.quant-gas">cond-mat.quant-gas</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.stat-mech">cond-mat.stat-mech</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.stat-mech">cond-mat.stat-mech</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.str-el">cond-mat.str-el</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.str-el">cond-mat.str-el</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.supr-con">cond-mat.supr-con</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.supr-con">cond-mat.supr-con</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cs.LG">cs.LG</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cs.LG">cs.LG</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-lat">hep-lat</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-lat">hep-lat</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-th">hep-th</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-th">hep-th</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math-ph">math-ph</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math-ph">math-ph</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.MP">math.MP</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.MP">math.MP</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.OC">math.OC</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.OC">math.OC</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.app-ph">physics.app-ph</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.app-ph">physics.app-ph</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.bio-ph">physics.bio-ph</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.bio-ph">physics.bio-ph</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.chem-ph">physics.chem-ph</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.chem-ph">physics.chem-ph</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.comp-ph">physics.comp-ph</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.comp-ph">physics.comp-ph</button>
                                 
-                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="quant-ph">quant-ph</button>
+                                    <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="quant-ph">quant-ph</button>
                                 
                             </div>
                         </div>
@@ -113,41 +122,41 @@
                             <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Keyword:</h4>
                             <div class="flex flex-wrap gap-2">
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nickelate">nickelate</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nickelate">nickelate</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="cuprate">cuprate</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="cuprate">cuprate</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="hubbard model">hubbard model</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="hubbard model">hubbard model</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="anderson impurity model">anderson impurity model</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="anderson impurity model">anderson impurity model</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="t-J model">t-J model</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="t-J model">t-J model</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="matrix product state">matrix product state</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="matrix product state">matrix product state</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="tensor network">tensor network</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="tensor network">tensor network</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="numerical renormalization group">numerical renormalization group</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="numerical renormalization group">numerical renormalization group</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="density matrix renormalization group">density matrix renormalization group</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="density matrix renormalization group">density matrix renormalization group</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="green's function">green's function</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="green's function">green's function</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="dynamical mean field theory">dynamical mean field theory</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="dynamical mean field theory">dynamical mean field theory</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="machine learning">machine learning</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="machine learning">machine learning</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural network">neural network</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural network">neural network</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural quantum state">neural quantum state</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural quantum state">neural quantum state</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="quantum monte carloresonant inelastic x-ray scattering">quantum monte carloresonant inelastic x-ray scattering</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="quantum monte carloresonant inelastic x-ray scattering">quantum monte carloresonant inelastic x-ray scattering</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="RIXS">RIXS</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="RIXS">RIXS</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="pump-probe">pump-probe</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="pump-probe">pump-probe</button>
                                 
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nonequilibrium">nonequilibrium</button>
+                                    <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nonequilibrium">nonequilibrium</button>
                                 
                             </div>
                         </div>
@@ -161,7 +170,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.supr-con,cond-mat.str-el"
-                             data-keywords="nickelate">
+                             data-keywords="nickelate"
+                             data-score="0.95"
+                             data-date="2025-06-25">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -272,7 +283,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.supr-con,cond-mat.mtrl-sci,cond-mat.str-el"
-                             data-keywords="nickelate,hubbard model">
+                             data-keywords="nickelate,hubbard model"
+                             data-score="0.95"
+                             data-date="2025-06-16">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -387,7 +400,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.supr-con,cond-mat.mtrl-sci,cond-mat.str-el"
-                             data-keywords="nickelate">
+                             data-keywords="nickelate"
+                             data-score="0.9"
+                             data-date="2025-06-26">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -500,7 +515,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el"
-                             data-keywords="nickelate">
+                             data-keywords="nickelate"
+                             data-score="0.9"
+                             data-date="2025-06-19">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -609,7 +626,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.supr-con"
-                             data-keywords="cuprate,t-J model">
+                             data-keywords="cuprate,t-J model"
+                             data-score="0.9"
+                             data-date="2025-06-18">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -722,7 +741,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="quant-ph,cond-mat.str-el"
-                             data-keywords="hubbard model,anderson impurity model">
+                             data-keywords="hubbard model,anderson impurity model"
+                             data-score="0.85"
+                             data-date="2025-06-26">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -835,7 +856,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.supr-con,cond-mat.str-el"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.85"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -946,7 +969,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.supr-con"
-                             data-keywords="nickelate">
+                             data-keywords="nickelate"
+                             data-score="0.85"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1057,7 +1082,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.supr-con,cond-mat.str-el"
-                             data-keywords="cuprate,RIXS">
+                             data-keywords="cuprate,RIXS"
+                             data-score="0.85"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1170,7 +1197,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el"
-                             data-keywords="nickelate">
+                             data-keywords="nickelate"
+                             data-score="0.85"
+                             data-date="2025-06-19">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1279,7 +1308,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.supr-con"
-                             data-keywords="cuprate,hubbard model">
+                             data-keywords="cuprate,hubbard model"
+                             data-score="0.85"
+                             data-date="2025-06-18">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1392,7 +1423,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.85"
+                             data-date="2025-06-15">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1503,7 +1536,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.supr-con"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.8"
+                             data-date="2025-06-19">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1614,7 +1649,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="hep-lat,cond-mat.quant-gas,cond-mat.str-el,quant-ph"
-                             data-keywords="matrix product state">
+                             data-keywords="matrix product state"
+                             data-score="0.75"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1729,7 +1766,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el"
-                             data-keywords="numerical renormalization group">
+                             data-keywords="numerical renormalization group"
+                             data-score="0.75"
+                             data-date="2025-06-16">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1838,7 +1877,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.mtrl-sci,cond-mat.supr-con"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.7"
+                             data-date="2025-06-24">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -1951,7 +1992,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="quant-ph,cond-mat.str-el"
-                             data-keywords="neural network">
+                             data-keywords="neural network"
+                             data-score="0.5573343618238447"
+                             data-date="2025-06-12">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2044,7 +2087,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci"
-                             data-keywords="nonequilibrium">
+                             data-keywords="nonequilibrium"
+                             data-score="0.5560323791362543"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2135,7 +2180,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.supr-con,cond-mat.str-el"
-                             data-keywords="green's function">
+                             data-keywords="green's function"
+                             data-score="0.5440057999051154"
+                             data-date="2025-06-18">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2228,7 +2275,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mes-hall,cond-mat.mtrl-sci,cond-mat.str-el"
-                             data-keywords="green's function">
+                             data-keywords="green's function"
+                             data-score="0.5418884186902049"
+                             data-date="2025-06-20">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2323,7 +2372,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,quant-ph"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.5294661356706479"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2416,7 +2467,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.quant-gas"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.5283087202343255"
+                             data-date="2025-06-17">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2509,7 +2562,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.quant-gas,cond-mat.str-el,math-ph,math.MP"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.5231249423703814"
+                             data-date="2025-06-19">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2606,7 +2661,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci,physics.chem-ph,physics.comp-ph"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.5228718439232534"
+                             data-date="2025-06-24">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2701,7 +2758,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.5212774394744271"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2792,7 +2851,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.quant-gas,cond-mat.supr-con"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.5179854002776773"
+                             data-date="2025-06-24">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2887,7 +2948,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci,cs.LG"
-                             data-keywords="machine learning,neural network">
+                             data-keywords="machine learning,neural network"
+                             data-score="0.5135266441836027"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -2982,7 +3045,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.quant-gas,cond-mat.stat-mech,quant-ph"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.5072107188475187"
+                             data-date="2025-06-18">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3079,7 +3144,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="quant-ph,cond-mat.str-el"
-                             data-keywords="density matrix renormalization group">
+                             data-keywords="density matrix renormalization group"
+                             data-score="0.5049212714541892"
+                             data-date="2025-06-14">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3172,7 +3239,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el"
-                             data-keywords="tensor network">
+                             data-keywords="tensor network"
+                             data-score="0.5023942266037628"
+                             data-date="2025-06-25">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3263,7 +3332,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.49247027511122937"
+                             data-date="2025-06-24">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3354,7 +3425,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.47935152050922747"
+                             data-date="2025-06-25">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3445,7 +3518,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mes-hall,cond-mat.str-el"
-                             data-keywords="pump-probe">
+                             data-keywords="pump-probe"
+                             data-score="0.47699243494441657"
+                             data-date="2025-06-16">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3538,7 +3613,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cs.LG,hep-lat"
-                             data-keywords="hubbard model">
+                             data-keywords="hubbard model"
+                             data-score="0.4743074920939826"
+                             data-date="2025-06-20">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3633,7 +3710,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci,cond-mat.mes-hall,physics.app-ph"
-                             data-keywords="green's function,nonequilibrium">
+                             data-keywords="green's function,nonequilibrium"
+                             data-score="0.4729798750307384"
+                             data-date="2025-06-26">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3730,7 +3809,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,physics.chem-ph"
-                             data-keywords="green's function">
+                             data-keywords="green's function"
+                             data-score="0.45668165901306684"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3823,7 +3904,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci,math.OC"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.45661861087131944"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -3916,7 +3999,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.stat-mech,hep-lat,hep-th"
-                             data-keywords="nonequilibrium">
+                             data-keywords="nonequilibrium"
+                             data-score="0.4558075062617995"
+                             data-date="2025-06-19">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4013,7 +4098,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="physics.app-ph,cond-mat.mtrl-sci"
-                             data-keywords="pump-probe">
+                             data-keywords="pump-probe"
+                             data-score="0.4"
+                             data-date="2025-06-25">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4124,7 +4211,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci,cs.LG"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.39796737592073894"
+                             data-date="2025-06-25">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4217,7 +4306,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.3843166270620482"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4308,7 +4399,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci"
-                             data-keywords="neural network">
+                             data-keywords="neural network"
+                             data-score="0.3754205123817949"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4399,7 +4492,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci"
-                             data-keywords="neural network">
+                             data-keywords="neural network"
+                             data-score="0.33025022832354706"
+                             data-date="2025-06-23">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4490,7 +4585,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.mtrl-sci,cond-mat.str-el,physics.chem-ph,physics.comp-ph"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.0"
+                             data-date="2025-06-25">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4592,7 +4689,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="quant-ph,cond-mat.str-el,physics.bio-ph,physics.chem-ph,physics.comp-ph"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.0"
+                             data-date="2025-06-25">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4696,7 +4795,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.supr-con,hep-th"
-                             data-keywords="green's function">
+                             data-keywords="green's function"
+                             data-score="0.0"
+                             data-date="2025-06-20">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4796,7 +4897,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el"
-                             data-keywords="hubbard model,dynamical mean field theory">
+                             data-keywords="hubbard model,dynamical mean field theory"
+                             data-score="0.0"
+                             data-date="2025-06-19">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4894,7 +4997,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.supr-con,cond-mat.stat-mech,cond-mat.str-el"
-                             data-keywords="tensor network">
+                             data-keywords="tensor network"
+                             data-score="0.0"
+                             data-date="2025-06-19">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -4994,7 +5099,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el,cond-mat.stat-mech"
-                             data-keywords="density matrix renormalization group">
+                             data-keywords="density matrix renormalization group"
+                             data-score="0.0"
+                             data-date="2025-06-18">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -5092,7 +5199,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.str-el"
-                             data-keywords="density matrix renormalization group">
+                             data-keywords="density matrix renormalization group"
+                             data-score="0.0"
+                             data-date="2025-06-16">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -5188,7 +5297,9 @@
                     <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden
                                    "
                              data-categories="cond-mat.quant-gas,cond-mat.str-el"
-                             data-keywords="machine learning">
+                             data-keywords="machine learning"
+                             data-score="0.0"
+                             data-date="2025-06-12">
                         <!-- Paper Header -->
                         <div class="flex justify-between items-start gap-4">
                              <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
@@ -5313,31 +5424,40 @@
                 throwOnError : false
             });
 
-            // --- Enhanced Filter & Search Logic ---
+            // --- Enhanced Controls Logic ---
             const searchInput = document.getElementById('search-input');
+            const sortContainer = document.getElementById('sort-container');
             const filterContainer = document.getElementById('filter-container');
             const clearButton = document.getElementById('clear-filters');
-            const paperArticles = Array.from(document.getElementsByClassName('paper-article'));
+            const papersList = document.getElementById('papers-list');
+            const paperArticles = Array.from(papersList.getElementsByClassName('paper-article'));
 
-            let activeFilters = {
-                category: new Set(),
-                keyword: new Set()
-            };
+            let activeFilters = { category: new Set(), keyword: new Set() };
             let searchTerm = '';
+            let currentSortBy = 'score'; // Default sort
 
             // --- Event Listeners ---
-            searchInput.addEventListener('input', function(event) {
-                searchTerm = event.target.value.toLowerCase();
-                applyFilters();
+            searchInput.addEventListener('input', (e) => {
+                searchTerm = e.target.value.toLowerCase();
+                updateDisplay();
             });
 
-            filterContainer.addEventListener('click', function(event) {
-                const target = event.target;
+            sortContainer.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!target.classList.contains('sort-btn')) return;
+
+                document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+                target.classList.add('active');
+                currentSortBy = target.dataset.sortBy;
+                updateDisplay();
+            });
+
+            filterContainer.addEventListener('click', (e) => {
+                const target = e.target;
                 if (!target.classList.contains('filter-btn')) return;
 
                 const filterType = target.dataset.filterType;
                 const filterValue = target.dataset.filterValue;
-
                 target.classList.toggle('active');
 
                 if (activeFilters[filterType].has(filterValue)) {
@@ -5345,39 +5465,51 @@
                 } else {
                     activeFilters[filterType].add(filterValue);
                 }
-                applyFilters();
+                updateDisplay();
             });
 
-            clearButton.addEventListener('click', function() {
-                // Clear active filters
-                document.querySelectorAll('.filter-btn.active').forEach(btn => btn.classList.remove('active'));
+            clearButton.addEventListener('click', () => {
+                document.querySelectorAll('.control-btn.active').forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.sort-btn[data-sort-by="score"]').classList.add('active'); // Reset to default sort
                 activeFilters.category.clear();
                 activeFilters.keyword.clear();
-                // Clear search bar
                 searchInput.value = '';
                 searchTerm = '';
-                // Apply changes
-                applyFilters();
+                currentSortBy = 'score';
+                updateDisplay();
             });
 
-            function applyFilters() {
-                paperArticles.forEach(article => {
+            function updateDisplay() {
+                // 1. Filter
+                const visibleArticles = paperArticles.filter(article => {
                     const articleCategories = article.dataset.categories.split(',');
                     const articleKeywords = article.dataset.keywords.split(',');
-
-                    // The entire text content of the article card
                     const articleText = article.textContent.toLowerCase();
 
-                    const categoryMatch = activeFilters.category.size === 0 || Array.from(activeFilters.category).every(filter => articleCategories.includes(filter));
-                    const keywordMatch = activeFilters.keyword.size === 0 || Array.from(activeFilters.keyword).every(filter => articleKeywords.includes(filter));
+                    const categoryMatch = activeFilters.category.size === 0 || Array.from(activeFilters.category).every(f => articleCategories.includes(f));
+                    const keywordMatch = activeFilters.keyword.size === 0 || Array.from(activeFilters.keyword).every(f => articleKeywords.includes(f));
                     const searchMatch = searchTerm === '' || articleText.includes(searchTerm);
 
-                    if (categoryMatch && keywordMatch && searchMatch) {
-                        article.style.display = 'block';
-                    } else {
-                        article.style.display = 'none';
-                    }
+                    return categoryMatch && keywordMatch && searchMatch;
                 });
+
+                // 2. Sort
+                visibleArticles.sort((a, b) => {
+                    if (currentSortBy === 'score') {
+                        const scoreA = parseFloat(a.dataset.score);
+                        const scoreB = parseFloat(b.dataset.score);
+                        return scoreB - scoreA; // Descending
+                    } else if (currentSortBy === 'date') {
+                        const dateA = new Date(a.dataset.date);
+                        const dateB = new Date(b.dataset.date);
+                        return dateB - dateA; // Descending
+                    }
+                    return 0;
+                });
+
+                // 3. Re-append to DOM
+                papersList.innerHTML = '';
+                visibleArticles.forEach(article => papersList.appendChild(article));
             }
         });
     </script>
