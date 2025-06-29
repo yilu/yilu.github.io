@@ -15,7 +15,11 @@
         .prose p { margin-top: 0; margin-bottom: 1em; }
         .reason-card { transition: background-color 0.2s ease-in-out; }
         .reason-card:hover { background-color: #f0f9ff; }
-        .filter-btn.active { background-color: #2563eb; color: white; }
+        .filter-btn.active {
+            background-color: #2563eb;
+            color: white;
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,95 +52,104 @@
                 <header class="mb-8">
                     <h2 class="text-3xl font-bold text-gray-900">Papers for 2025-06</h2>
                     <div class="text-sm text-gray-500 mt-2 space-y-1">
-                        <p>Last updated: 2025-06-29 09:20:44 UTC.
+                        <p>Last updated: 2025-06-29 09:33:40 UTC.
                            
                         </p>
                         
                     </div>
                 </header>
 
-                <!-- Filter Section -->
-                <div id="filter-container" class="mb-8 p-4 bg-white rounded-lg shadow-sm border border-gray-200">
-                    <div class="mb-4">
-                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Category:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mes-hall">cond-mat.mes-hall</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mtrl-sci">cond-mat.mtrl-sci</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.quant-gas">cond-mat.quant-gas</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.stat-mech">cond-mat.stat-mech</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.str-el">cond-mat.str-el</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.supr-con">cond-mat.supr-con</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cs.LG">cs.LG</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-lat">hep-lat</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-th">hep-th</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math-ph">math-ph</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.MP">math.MP</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.OC">math.OC</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.app-ph">physics.app-ph</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.bio-ph">physics.bio-ph</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.chem-ph">physics.chem-ph</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.comp-ph">physics.comp-ph</button>
-                            
-                                <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="quant-ph">quant-ph</button>
-                            
-                        </div>
-                    </div>
+                <!-- Filter & Search Section -->
+                <div id="controls-container" class="mb-8 p-4 bg-white rounded-lg shadow-sm border border-gray-200 space-y-4">
+                    <!-- Search Bar -->
                     <div>
-                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Keyword:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nickelate">nickelate</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="cuprate">cuprate</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="hubbard model">hubbard model</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="anderson impurity model">anderson impurity model</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="t-J model">t-J model</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="matrix product state">matrix product state</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="tensor network">tensor network</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="numerical renormalization group">numerical renormalization group</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="density matrix renormalization group">density matrix renormalization group</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="green's function">green's function</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="dynamical mean field theory">dynamical mean field theory</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="machine learning">machine learning</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural network">neural network</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural quantum state">neural quantum state</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="quantum monte carloresonant inelastic x-ray scattering">quantum monte carloresonant inelastic x-ray scattering</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="RIXS">RIXS</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="pump-probe">pump-probe</button>
-                            
-                                <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nonequilibrium">nonequilibrium</button>
-                            
+                        <label for="search-input" class="text-sm font-semibold text-gray-700 mb-2 block">Search Papers</label>
+                        <input type="text" id="search-input" placeholder="Search by title, author, abstract..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Filters -->
+                    <div id="filter-container">
+                        <div class="mb-4">
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Category:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mes-hall">cond-mat.mes-hall</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mtrl-sci">cond-mat.mtrl-sci</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.quant-gas">cond-mat.quant-gas</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.stat-mech">cond-mat.stat-mech</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.str-el">cond-mat.str-el</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.supr-con">cond-mat.supr-con</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cs.LG">cs.LG</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-lat">hep-lat</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="hep-th">hep-th</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math-ph">math-ph</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.MP">math.MP</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="math.OC">math.OC</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.app-ph">physics.app-ph</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.bio-ph">physics.bio-ph</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.chem-ph">physics.chem-ph</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="physics.comp-ph">physics.comp-ph</button>
+                                
+                                    <button class="filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="quant-ph">quant-ph</button>
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Keyword:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nickelate">nickelate</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="cuprate">cuprate</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="hubbard model">hubbard model</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="anderson impurity model">anderson impurity model</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="t-J model">t-J model</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="matrix product state">matrix product state</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="tensor network">tensor network</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="numerical renormalization group">numerical renormalization group</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="density matrix renormalization group">density matrix renormalization group</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="green's function">green's function</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="dynamical mean field theory">dynamical mean field theory</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="machine learning">machine learning</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural network">neural network</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="neural quantum state">neural quantum state</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="quantum monte carloresonant inelastic x-ray scattering">quantum monte carloresonant inelastic x-ray scattering</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="RIXS">RIXS</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="pump-probe">pump-probe</button>
+                                
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="nonequilibrium">nonequilibrium</button>
+                                
+                            </div>
                         </div>
                     </div>
                     <button id="clear-filters" class="mt-4 text-xs text-blue-600 hover:underline">Clear All Filters</button>
@@ -5288,7 +5301,6 @@
             }
         }
 
-        // --- Filter Logic ---
         document.addEventListener("DOMContentLoaded", function() {
             // Render LaTeX formulas
             renderMathInElement(document.body, {
@@ -5301,16 +5313,23 @@
                 throwOnError : false
             });
 
-            // Filter functionality
+            // --- Enhanced Filter & Search Logic ---
+            const searchInput = document.getElementById('search-input');
             const filterContainer = document.getElementById('filter-container');
-            const papersList = document.getElementById('papers-list');
             const clearButton = document.getElementById('clear-filters');
-            const paperArticles = Array.from(papersList.getElementsByClassName('paper-article'));
+            const paperArticles = Array.from(document.getElementsByClassName('paper-article'));
 
             let activeFilters = {
                 category: new Set(),
                 keyword: new Set()
             };
+            let searchTerm = '';
+
+            // --- Event Listeners ---
+            searchInput.addEventListener('input', function(event) {
+                searchTerm = event.target.value.toLowerCase();
+                applyFilters();
+            });
 
             filterContainer.addEventListener('click', function(event) {
                 const target = event.target;
@@ -5330,9 +5349,14 @@
             });
 
             clearButton.addEventListener('click', function() {
+                // Clear active filters
                 document.querySelectorAll('.filter-btn.active').forEach(btn => btn.classList.remove('active'));
                 activeFilters.category.clear();
                 activeFilters.keyword.clear();
+                // Clear search bar
+                searchInput.value = '';
+                searchTerm = '';
+                // Apply changes
                 applyFilters();
             });
 
@@ -5341,10 +5365,14 @@
                     const articleCategories = article.dataset.categories.split(',');
                     const articleKeywords = article.dataset.keywords.split(',');
 
+                    // The entire text content of the article card
+                    const articleText = article.textContent.toLowerCase();
+
                     const categoryMatch = activeFilters.category.size === 0 || Array.from(activeFilters.category).every(filter => articleCategories.includes(filter));
                     const keywordMatch = activeFilters.keyword.size === 0 || Array.from(activeFilters.keyword).every(filter => articleKeywords.includes(filter));
+                    const searchMatch = searchTerm === '' || articleText.includes(searchTerm);
 
-                    if (categoryMatch && keywordMatch) {
+                    if (categoryMatch && keywordMatch && searchMatch) {
                         article.style.display = 'block';
                     } else {
                         article.style.display = 'none';
