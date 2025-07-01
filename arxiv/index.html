@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMcAXPbeZQMNlbAEQZdjeEqQeeyLSpPDayciONa03urlgXHzX" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .prose { max-width: 65ch; }
@@ -64,7 +63,7 @@
                     <header class="mb-8">
                         <h2 class="text-3xl font-bold text-gray-900">Papers for 2025-06</h2>
                         <div class="text-sm text-gray-500 mt-2 space-y-1">
-                            <p>Last updated: 2025-07-01 08:10:53 UTC.
+                            <p>Last updated: 2025-07-01 08:23:02 UTC.
                                
                             </p>
                             
@@ -7806,23 +7805,53 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            // --- MODIFICATION START: Targeted LaTeX Rendering ---
-            // Instead of rendering the whole body, render each paper article individually.
-            // This can prevent rendering bugs in complex layouts.
-            const articles = document.querySelectorAll('.paper-article');
-            const katex_options = {
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ],
-                throwOnError : false
-            };
-            articles.forEach(article => {
-                renderMathInElement(article, katex_options);
-            });
-            // --- MODIFICATION END ---
+            // --- Manual LaTeX Rendering Logic ---
+            function renderLatexInElement(element) {
+                // Find text nodes that are not inside script/style tags.
+                const treeWalker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+                    acceptNode: function(node) {
+                        return node.parentElement.tagName !== 'SCRIPT' && node.parentElement.tagName !== 'STYLE' ?
+                               NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+                    }
+                });
+
+                const nodes = [];
+                while (treeWalker.nextNode()) {
+                    nodes.push(treeWalker.currentNode);
+                }
+
+                nodes.forEach((node) => {
+                    const text = node.nodeValue;
+                    // Use a regex that does not greedily match across multiple formulas.
+                    const regex = /\$(.+?)\$/g;
+                    if (text.match(regex)) {
+                        const span = document.createElement('span');
+                        let lastIndex = 0;
+                        let match;
+
+                        while ((match = regex.exec(text)) !== null) {
+                            // Add text before the match
+                            span.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+                            // Render the math and add it
+                            const mathSpan = document.createElement('span');
+                            try {
+                                katex.render(match[1], mathSpan, { throwOnError: false, displayMode: false });
+                                span.appendChild(mathSpan);
+                            } catch (e) {
+                                console.error('KaTeX error:', e);
+                                span.appendChild(document.createTextNode(match[0])); // On error, show original text
+                            }
+                            lastIndex = regex.lastIndex;
+                        }
+                        // Add any remaining text after the last match
+                        span.appendChild(document.createTextNode(text.slice(lastIndex)));
+                        // Replace the original text node with the new span
+                        node.parentNode.replaceChild(span, node);
+                    }
+                });
+            }
+            // Run the manual renderer on the entire page body.
+            renderLatexInElement(document.body);
 
 
             // --- Mobile Sidebar Logic ---
@@ -7855,9 +7884,8 @@
 
             let activeFilters = { category: new Set(), keyword: new Set() };
             let searchTerm = '';
-            let currentSortBy = 'score'; // Default sort
+            let currentSortBy = 'score';
 
-            // --- Event Listeners ---
             searchInput.addEventListener('input', (e) => {
                 searchTerm = e.target.value.toLowerCase();
                 updateDisplay();
@@ -7891,7 +7919,7 @@
 
             clearButton.addEventListener('click', () => {
                 document.querySelectorAll('.control-btn.active').forEach(btn => btn.classList.remove('active'));
-                document.querySelector('.sort-btn[data-sort-by="score"]').classList.add('active'); // Reset to default sort
+                document.querySelector('.sort-btn[data-sort-by="score"]').classList.add('active');
                 activeFilters.category.clear();
                 activeFilters.keyword.clear();
                 searchInput.value = '';
@@ -7901,7 +7929,6 @@
             });
 
             function updateDisplay() {
-                // 1. Filter
                 const visibleArticles = paperArticles.filter(article => {
                     const articleCategories = article.dataset.categories.split(',');
                     const articleKeywords = article.dataset.keywords.split(',');
@@ -7914,21 +7941,15 @@
                     return categoryMatch && keywordMatch && searchMatch;
                 });
 
-                // 2. Sort
                 visibleArticles.sort((a, b) => {
                     if (currentSortBy === 'score') {
-                        const scoreA = parseFloat(a.dataset.score);
-                        const scoreB = parseFloat(b.dataset.score);
-                        return scoreB - scoreA; // Descending
+                        return parseFloat(b.dataset.score) - parseFloat(a.dataset.score);
                     } else if (currentSortBy === 'date') {
-                        const dateA = new Date(a.dataset.date);
-                        const dateB = new Date(b.dataset.date);
-                        return dateB - dateA; // Descending
+                        return new Date(b.dataset.date) - new Date(a.dataset.date);
                     }
                     return 0;
                 });
 
-                // 3. Re-append to DOM
                 papersList.innerHTML = '';
                 visibleArticles.forEach(article => papersList.appendChild(article));
             }
@@ -7952,13 +7973,13 @@
                     const bibtexKey = `arXiv:${data.id}`;
 
                     const bibtexContent = `@misc{${bibtexKey},\n` +
-                                          `      title        = {${data.title}},\n` +
-                                          `      author       = {${data.authors}},\n` +
-                                          `      year         = {${year}},\n` +
-                                          `      eprint       = {${data.id}},\n` +
-                                          `      archivePrefix = {arXiv},\n` +
-                                          `      primaryClass = {${button.closest('.paper-article').dataset.categories.split(',')[0]}}\n`+
-                                          `}`;
+                                        `      title        = {${data.title}},\n` +
+                                        `      author       = {${data.authors}},\n` +
+                                        `      year         = {${year}},\n` +
+                                        `      eprint       = {${data.id}},\n` +
+                                        `      archivePrefix = {arXiv},\n` +
+                                        `      primaryClass = {${button.closest('.paper-article').dataset.categories.split(',')[0]}}\n`+
+                                        `}`;
 
                     downloadFile(`${data.id}.bib`, bibtexContent);
                 }
