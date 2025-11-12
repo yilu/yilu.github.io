@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arXiv Curator | 2020-08</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX Rendering (Core Library Only) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMcAXPbeZQMNlbAEQZdjeEqQeeyLSpPDayciONa03urlgXHzX" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose { max-width: 65ch; }
+        .prose p { margin-top: 0; margin-bottom: 1em; }
+        .reason-card { transition: background-color 0.2s ease-in-out; }
+        .reason-card:hover { background-color: #f0f9ff; }
+        .control-btn.active {
+            background-color: #2563eb;
+            color: white;
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+        }
+        .pagination-btn {
+            min-width: 2.5rem; /* 40px */
+        }
+        .pagination-btn.active {
+            background-color: #2563eb;
+            border-color: #2563eb;
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="text-gray-800">
+
+    <div>
+        <!-- Mobile header with Hamburger Menu -->
+        <div class="sticky top-0 z-10 flex items-center justify-between bg-white p-4 border-b border-gray-200 md:hidden">
+            <h1 class="text-xl font-bold text-gray-900">arXiv Curator</h1>
+            <button id="hamburger-btn" class="p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+
+        <div class="relative flex min-h-screen">
+            <!-- Sidebar Navigation (Now an overlay on all screen sizes) -->
+            <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+            <nav id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 p-4 md:p-6 transform -translate-x-full transition-transform duration-300 ease-in-out">
+                <div class="flex items-center justify-between mb-6">
+                    <h1 class="text-2xl font-bold text-gray-900">arXiv Curator</h1>
+                    <button id="close-sidebar-btn" class="p-2">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Archives</h2>
+                <ul class="space-y-2">
+                    
+                    <li>
+                        <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-11
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-10
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-09
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-08.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-08
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-07
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-06
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-05
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-04
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-03.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-03
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-02.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-02
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2025-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2025-01
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2024-11.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2024-11
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2024-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2024-10
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2024-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2024-09
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2024-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2024-07
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2024-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2024-05
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2020-12.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2020-12
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2020-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2020-10
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2020-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2020-09
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2020-08.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                bg-blue-100 text-blue-700 font-semibold
+                            ">
+                            2020-08
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2020-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2020-07
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2020-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2020-06
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2020-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2020-05
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2019-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2019-06
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2019-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2019-05
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2019-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2019-04
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2019-02.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2019-02
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2015-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2015-06
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2012-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2012-04
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2011-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2011-01
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2009-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2009-10
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2009-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2009-09
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2009-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2009-07
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2008-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2008-10
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2008-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2008-05
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2008-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2008-04
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2005-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2005-10
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2002-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2002-10
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="2001-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            2001-01
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="1999-11.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            1999-11
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="1998-12.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            1998-12
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="1998-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            
+                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                            ">
+                            1998-05
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="flex-1 p-4 md:p-10">
+                <!-- Desktop Menu Button -->
+                <button id="desktop-hamburger-btn" class="hidden md:block fixed top-6 left-6 z-30 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-colors">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+
+                <div class="max-w-7xl mx-auto">
+                    <header class="mb-8">
+                        <h2 class="text-3xl font-bold text-gray-900">Papers for 2020-08</h2>
+                        <div class="text-sm text-gray-500 mt-2 space-y-1">
+                            <p>Last updated: 2025-11-12 05:23:41 UTC.
+                               
+                                    <span class="text-green-600 font-semibold">Added 59 new papers.</span>
+                               
+                            </p>
+                            
+                        </div>
+                    </header>
+
+                    <!-- Controls Section -->
+                    <div id="controls-container" class="mb-8 p-4 bg-white rounded-lg shadow-sm border border-gray-200 space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-8 gap-4">
+                            <div class="md:col-span-7">
+                                <label for="search-input" class="text-sm font-semibold text-gray-700 mb-2 block">Search Papers</label>
+                                <input type="text" id="search-input" placeholder="Search by title, author, abstract..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="items-per-page" class="text-sm font-semibold text-gray-700 mb-2 block">Items per page</label>
+                                <select id="items-per-page" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="1000">All</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Sorting -->
+                        <div id="sort-container">
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Sort by:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                 <button class="control-btn sort-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300 active" data-sort-by="score">LLM Score</button>
+                                 <button class="control-btn sort-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-sort-by="date">Date</button>
+                            </div>
+                        </div>
+
+                        <!-- Filters -->
+                        <div id="filter-container">
+                            <div class="mb-4">
+                                <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Category:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mes-hall">cond-mat.mes-hall</button>
+                                    
+                                        <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.mtrl-sci">cond-mat.mtrl-sci</button>
+                                    
+                                        <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.stat-mech">cond-mat.stat-mech</button>
+                                    
+                                        <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.str-el">cond-mat.str-el</button>
+                                    
+                                        <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.supr-con">cond-mat.supr-con</button>
+                                    
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Keyword:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="cuprate">cuprate</button>
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="density matrix renormalization group">density matrix renormalization group</button>
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="green's function">green's function</button>
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="machine learning">machine learning</button>
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="quantum spin liquid">quantum spin liquid</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <button id="clear-filters" class="mt-4 text-xs text-blue-600 hover:underline">Clear All Filters</button>
+                    </div>
+
+
+                    <div id="papers-list" class="space-y-8">
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden  border-l-4 border-l-green-400 "
+                                 data-categories="cond-mat.supr-con,cond-mat.mtrl-sci,cond-mat.str-el"
+                                 data-keywords="cuprate"
+                                 data-score="0.7"
+                                 data-date="2020-08-03">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/2008.01159v1" target="_blank" class="hover:text-blue-600">Using uniaxial stress to probe the relationship between competing superconducting states in a cuprate with spin-stripe order</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2008.01159v1&paper_details=Like%20paper%3A%20Using%20uniaxial%20stress%20to%20probe%20the%20relationship%20between%20competing%20superconducting%20states%20in%20a%20cuprate%20with%20spin-stripe%20order" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-2008-01159v1">
+                                
+                                
+                                
+                                    <span class="author-list-collapsed">
+                                        Z. Guguchia, D. Das, C. N. Wang,
+                                        <button onclick="toggleAuthors('authors-2008-01159v1')" class="text-blue-600 hover:underline text-xs mx-1">... (view all 20) ...</button>
+                                        C. W. Hicks, H. Luetkens
+                                    </span>
+                                    <span class="author-list-expanded hidden">
+                                        <span class="inline-block mr-2">
+                                            Z. Guguchia
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Z.%20Guguchia"
+                                               target="_blank" title="Follow Z. Guguchia" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            D. Das
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+D.%20Das"
+                                               target="_blank" title="Follow D. Das" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            C. N. Wang
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+C.%20N.%20Wang"
+                                               target="_blank" title="Follow C. N. Wang" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            T. Adachi
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+T.%20Adachi"
+                                               target="_blank" title="Follow T. Adachi" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            N. Kitajima
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+N.%20Kitajima"
+                                               target="_blank" title="Follow N. Kitajima" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            M. Elender
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+M.%20Elender"
+                                               target="_blank" title="Follow M. Elender" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            F. Brückner
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+F.%20Br%C3%BCckner"
+                                               target="_blank" title="Follow F. Brückner" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            S. Ghosh
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+S.%20Ghosh"
+                                               target="_blank" title="Follow S. Ghosh" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            V. Grinenko
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+V.%20Grinenko"
+                                               target="_blank" title="Follow V. Grinenko" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            T. Shiroka
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+T.%20Shiroka"
+                                               target="_blank" title="Follow T. Shiroka" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            M. Müller
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+M.%20M%C3%BCller"
+                                               target="_blank" title="Follow M. Müller" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            C. Mudry
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+C.%20Mudry"
+                                               target="_blank" title="Follow C. Mudry" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            C. Baines
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+C.%20Baines"
+                                               target="_blank" title="Follow C. Baines" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            M. Bartkowiak
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+M.%20Bartkowiak"
+                                               target="_blank" title="Follow M. Bartkowiak" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Y. Koike
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Y.%20Koike"
+                                               target="_blank" title="Follow Y. Koike" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            A. Amato
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+A.%20Amato"
+                                               target="_blank" title="Follow A. Amato" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            J. M. Tranquada
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+J.%20M.%20Tranquada"
+                                               target="_blank" title="Follow J. M. Tranquada" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            H. -H. Klauss
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+H.%20-H.%20Klauss"
+                                               target="_blank" title="Follow H. -H. Klauss" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            C. W. Hicks
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+C.%20W.%20Hicks"
+                                               target="_blank" title="Follow C. W. Hicks" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            H. Luetkens
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+H.%20Luetkens"
+                                               target="_blank" title="Follow H. Luetkens" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><button onclick="toggleAuthors('authors-2008-01159v1')" class="text-blue-600 hover:underline text-xs ml-1">(show less)</button>
+                                    </span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:2008.01159v1</span>
+                                <span>Published: 2020-08-03</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
+                                
+                                <a href="https://doi.org/10.1103/PhysRevLett.125.097005." target="_blank" class="text-blue-600 hover:underline">DOI</a>
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.supr-con</span><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.mtrl-sci</span><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.str-el</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-2008-01159-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="2008.01159v1" data-title="Using uniaxial stress to probe the relationship between competing superconducting states in a cuprate with spin-stripe order"
+                                        data-authors="Z. Guguchia and D. Das and C. N. Wang and T. Adachi and N. Kitajima and M. Elender and F. Brückner and S. Ghosh and V. Grinenko and T. Shiroka and M. Müller and C. Mudry and C. Baines and M. Bartkowiak and Y. Koike and A. Amato and J. M. Tranquada and H. -H. Klauss and C. W. Hicks and H. Luetkens" data-date="2020-08-03">Export to BibTeX</button>
+                                <div id="abstract-2008-01159-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>We report muon spin rotation and magnetic susceptibility experiments on in-plane stress effects on the static spin-stripe order and superconductivity in the cuprate system La2-xBaxCuO4 with x = 0.115. An extremely low uniaxial stress of 0.1 GPa induces a substantial decrease in the magnetic volume fraction and a dramatic rise in the onset of 3D superconductivity, from 10 to 32 K; however, the onset of at-least-2D superconductivity is much less sensitive to stress. These results show not only that large-volume-fraction spin-stripe order is anti-correlated with 3D superconducting (SC) coherence, but also that these states are energetically very finely balanced. Moreover, the onset temperatures of 3D superconductivity and spin-stripe order are very similar in the large stress regime. These results strongly suggest a similar pairing mechanism for spin-stripe order, the spatially-modulated 2D and uniform 3D SC orders, imposing an important constraint on theoretical models.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">cuprate</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">uniaxial stress</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+uniaxial%20stress&paper_details=Promoting+keyword+'uniaxial%20stress'+from+paper+2008.01159v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">spin-stripe order</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+spin-stripe%20order&paper_details=Promoting+keyword+'spin-stripe%20order'+from+paper+2008.01159v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">cuprate superconductivity</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+cuprate%20superconductivity&paper_details=Promoting+keyword+'cuprate%20superconductivity'+from+paper+2008.01159v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"The paper discusses superconductivity in cuprates and the interplay between different order parameters, which aligns with the user's interest in superconductivity and related materials."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.701</span> -
+                                            <span class="italic text-gray-600">S Blanco-Canosa, B Keimer et al.,</span>
+                                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.110.187001" target="_blank" class="text-blue-600 hover:underline">Momentum-Dependent Charge Correlations in YBa 2 Cu 3 O...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.680</span> -
+                                            <span class="italic text-gray-600">M Minola, M Le Tacon et al.,</span>
+                                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.217003" target="_blank" class="text-blue-600 hover:underline">Collective nature of spin excitations in superconducting...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.634</span> -
+                                            <span class="italic text-gray-600">Xuejiao Chen, Yi Lu et al.,</span>
+                                            <a href="https://arxiv.org/abs/2307.07154" target="_blank" class="text-blue-600 hover:underline">Charge and spin instabilities in superconducting </a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden  border-l-4 border-l-green-400 "
+                                 data-categories="cond-mat.supr-con,cond-mat.mtrl-sci"
+                                 data-keywords="cuprate"
+                                 data-score="0.7"
+                                 data-date="2020-08-13">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/2008.05725v1" target="_blank" class="hover:text-blue-600">Molecular beam epitaxy growth and surface structure of Sr1-xNdxCuO2 cuprate films</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2008.05725v1&paper_details=Like%20paper%3A%20Molecular%20beam%20epitaxy%20growth%20and%20surface%20structure%20of%20Sr1-xNdxCuO2%20cuprate%20films" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-2008-05725v1">
+                                
+                                
+                                
+                                    <span class="author-list-collapsed">
+                                        Jia-Qi Fan, Shu-Ze Wang, Xue-Qing Yu,
+                                        <button onclick="toggleAuthors('authors-2008-05725v1')" class="text-blue-600 hover:underline text-xs mx-1">... (view all 8) ...</button>
+                                        Xu-Cun Ma, Qi-Kun Xue
+                                    </span>
+                                    <span class="author-list-expanded hidden">
+                                        <span class="inline-block mr-2">
+                                            Jia-Qi Fan
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Jia-Qi%20Fan"
+                                               target="_blank" title="Follow Jia-Qi Fan" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Shu-Ze Wang
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Shu-Ze%20Wang"
+                                               target="_blank" title="Follow Shu-Ze Wang" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Xue-Qing Yu
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Xue-Qing%20Yu"
+                                               target="_blank" title="Follow Xue-Qing Yu" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Rui-Feng Wang
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Rui-Feng%20Wang"
+                                               target="_blank" title="Follow Rui-Feng Wang" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Yan-Ling Xiong
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Yan-Ling%20Xiong"
+                                               target="_blank" title="Follow Yan-Ling Xiong" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Can-Li Song
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Can-Li%20Song"
+                                               target="_blank" title="Follow Can-Li Song" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Xu-Cun Ma
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Xu-Cun%20Ma"
+                                               target="_blank" title="Follow Xu-Cun Ma" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Qi-Kun Xue
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Qi-Kun%20Xue"
+                                               target="_blank" title="Follow Qi-Kun Xue" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><button onclick="toggleAuthors('authors-2008-05725v1')" class="text-blue-600 hover:underline text-xs ml-1">(show less)</button>
+                                    </span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:2008.05725v1</span>
+                                <span>Published: 2020-08-13</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
+                                
+                                <a href="https://doi.org/10.1103/PhysRevB.101.180508" target="_blank" class="text-blue-600 hover:underline">DOI</a>
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.supr-con</span><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.mtrl-sci</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-2008-05725-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="2008.05725v1" data-title="Molecular beam epitaxy growth and surface structure of Sr1-xNdxCuO2 cuprate films"
+                                        data-authors="Jia-Qi Fan and Shu-Ze Wang and Xue-Qing Yu and Rui-Feng Wang and Yan-Ling Xiong and Can-Li Song and Xu-Cun Ma and Qi-Kun Xue" data-date="2020-08-13">Export to BibTeX</button>
+                                <div id="abstract-2008-05725-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>We report on the epitaxial growth and surface structure of infinite-layer cuprate Sr1-xNdxCuO2 films on SrTiO3(001) substrates by combining ozone-assisted molecular beam epitaxy and in situ scanning tunneling microscopy. Careful substrate temperature and flux control has been used to achieve single-phase, stoichiometric, and c-axis oriented films. The surface of the films is usually characterized by a mixed CuO2 surface and gridlike superstructure. The superstructure exhibits a periodicity of 3.47 nm that corresponds to a coincidence lattice between the overlayer peroxide SrO2 and underlying CuO2 plane, and gives rise to a conductance spectrum that is distinct from the Mott-Hubbard band structure of CuO2. At a higher Nd composition x > 0.1, a (2 x 2) surface characteristic of the hole-doped CuO2 emerges, which we ascribe to the intake of apical oxygens in the intervening Sr planes.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">cuprate</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">molecular beam epitaxy</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+molecular%20beam%20epitaxy&paper_details=Promoting+keyword+'molecular%20beam%20epitaxy'+from+paper+2008.05725v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">infinite-layer cuprates</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+infinite-layer%20cuprates&paper_details=Promoting+keyword+'infinite-layer%20cuprates'+from+paper+2008.05725v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">surface superstructure</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+surface%20superstructure&paper_details=Promoting+keyword+'surface%20superstructure'+from+paper+2008.05725v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"The paper focuses on the growth and surface structure of cuprate films, a topic related to previously liked papers on cuprates and their electronic properties."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.569</span> -
+                                            <span class="italic text-gray-600">Zehao Dong, Yayu Wang et al.,</span>
+                                            <a href="http://arxiv.org/abs/2508.03414v1" target="_blank" class="text-blue-600 hover:underline">Interstitial oxygen order and its competition with...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.564</span> -
+                                            <span class="italic text-gray-600">Alex Frano, RJ Birgeneau et al.,</span>
+                                            <a href="https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.3.063803" target="_blank" class="text-blue-600 hover:underline">Control of dopant crystallinity in electrochemically...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.551</span> -
+                                            <span class="italic text-gray-600">A Frano, B Keimer et al.,</span>
+                                            <a href="https://www.nature.com/articles/nmat4682" target="_blank" class="text-blue-600 hover:underline">Long-range charge-density-wave proximity effect at...</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden  border-l-4 border-l-green-400 "
+                                 data-categories="cond-mat.str-el,cond-mat.stat-mech"
+                                 data-keywords="density matrix renormalization group"
+                                 data-score="0.4"
+                                 data-date="2020-08-10">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/2008.04438v2" target="_blank" class="hover:text-blue-600">Coupled wire construction of a topological phase with chiral tricritical Ising edge modes</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2008.04438v2&paper_details=Like%20paper%3A%20Coupled%20wire%20construction%20of%20a%20topological%20phase%20with%20chiral%20tricritical%20Ising%20edge%20modes" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-2008-04438v2">
+                                
+                                
+                                
+                                    <span class="inline-block mr-2">
+                                        Chengshu Li
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Chengshu%20Li"
+                                           target="_blank" title="Follow Chengshu Li" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Hiromi Ebisu
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Hiromi%20Ebisu"
+                                           target="_blank" title="Follow Hiromi Ebisu" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Sharmistha Sahoo
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Sharmistha%20Sahoo"
+                                           target="_blank" title="Follow Sharmistha Sahoo" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Yuval Oreg
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Yuval%20Oreg"
+                                           target="_blank" title="Follow Yuval Oreg" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Marcel Franz
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Marcel%20Franz"
+                                           target="_blank" title="Follow Marcel Franz" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:2008.04438v2</span>
+                                <span>Published: 2020-08-10</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.400</span>
+                                
+                                <a href="https://doi.org/10.1103/PhysRevB.102.165123" target="_blank" class="text-blue-600 hover:underline">DOI</a>
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.str-el</span><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.stat-mech</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-2008-04438-2')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="2008.04438v2" data-title="Coupled wire construction of a topological phase with chiral tricritical Ising edge modes"
+                                        data-authors="Chengshu Li and Hiromi Ebisu and Sharmistha Sahoo and Yuval Oreg and Marcel Franz" data-date="2020-08-10">Export to BibTeX</button>
+                                <div id="abstract-2008-04438-2" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>Tricritical Ising (TCI) phase transition is known to occur in several interacting spin and Majorana fermion models and is described in terms of a supersymmetric conformal field theory (CFT) with central charge $c=7/10$. The field content of this CFT is highly nontrivial and includes among its primary fields the Fibonacci anyon, making it of potential interest to strategies seeking to implement fault-tolerant topological quantum computation with non-Abelian phases of matter. In this paper we explore the possibility that a TCI CFT can occur at the edge of a gapped two-dimensional topological state as a stable phase. We discuss a possible realization of this 2D phase based on a coupled-wire construction using the Grover-Sheng-Vishwanath chain model of Majorana zero modes coupled to Ising spins which is known to undergo the TCI phase transition. From the combined analysis using mean-field theory, conformal field theory and density matrix renormalization group (DMRG) on 2- and 4-leg ladders, we find that the left- and right-moving gapless TCI modes become spatially separated and reside on two opposite edges of the system, forming a precursor of the required 2D topological phase.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">density matrix renormalization group</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Tricritical Ising</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Tricritical%20Ising&paper_details=Promoting+keyword+'Tricritical%20Ising'+from+paper+2008.04438v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Coupled wire construction</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Coupled%20wire%20construction&paper_details=Promoting+keyword+'Coupled%20wire%20construction'+from+paper+2008.04438v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Topological phase</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Topological%20phase&paper_details=Promoting+keyword+'Topological%20phase'+from+paper+2008.04438v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"While the user has shown interest in topological materials and superconductivity, this paper's focus on Tricritical Ising models and coupled wire constructions for topological phases is somewhat tangential to the user's demonstrated interests in nickelates and dynamical mean-field theory."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.644</span> -
+                                            <span class="italic text-gray-600">YX Zhao, Shengyuan A Yang et al.,</span>
+                                            <a href="https://arxiv.org/abs/2005.14500" target="_blank" class="text-blue-600 hover:underline">Topological second-order spin-3/2 liquids with hinge Fermi arcs</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.536</span> -
+                                            <span class="italic text-gray-600">Parameshwar R. Pasnoori, Natan Andrei et al.,</span>
+                                            <a href="http://arxiv.org/abs/2507.00386v1" target="_blank" class="text-blue-600 hover:underline">Complete Boundary Phase Diagram of the...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.519</span> -
+                                            <span class="italic text-gray-600">Markus Drescher, Frank Pollmann et al.,</span>
+                                            <a href="http://arxiv.org/abs/2508.17292v1" target="_blank" class="text-blue-600 hover:underline">Spectral Functions of an Extended Antiferromagnetic...</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden  border-l-4 border-l-green-400 "
+                                 data-categories="cond-mat.mtrl-sci"
+                                 data-keywords="quantum spin liquid"
+                                 data-score="0.3"
+                                 data-date="2020-08-12">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/2008.05236v2" target="_blank" class="hover:text-blue-600">Stabilization of a honeycomb lattice of IrO$_6$ octahedra in superlattices with ilmenite-type MnTiO$_3$</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2008.05236v2&paper_details=Like%20paper%3A%20Stabilization%20of%20a%20honeycomb%20lattice%20of%20IrO%24_6%24%20octahedra%20in%20superlattices%20with%20ilmenite-type%20MnTiO%24_3%24" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-2008-05236v2">
+                                
+                                
+                                
+                                    <span class="author-list-collapsed">
+                                        Kei Miura, Kohei Fujiwara, Kei Nakayama,
+                                        <button onclick="toggleAuthors('authors-2008-05236v2')" class="text-blue-600 hover:underline text-xs mx-1">... (view all 6) ...</button>
+                                        Naoya Shibata, Atsushi Tsukazaki
+                                    </span>
+                                    <span class="author-list-expanded hidden">
+                                        <span class="inline-block mr-2">
+                                            Kei Miura
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Kei%20Miura"
+                                               target="_blank" title="Follow Kei Miura" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Kohei Fujiwara
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Kohei%20Fujiwara"
+                                               target="_blank" title="Follow Kohei Fujiwara" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Kei Nakayama
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Kei%20Nakayama"
+                                               target="_blank" title="Follow Kei Nakayama" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Ryo Ishikawa
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Ryo%20Ishikawa"
+                                               target="_blank" title="Follow Ryo Ishikawa" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Naoya Shibata
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Naoya%20Shibata"
+                                               target="_blank" title="Follow Naoya Shibata" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><span class="inline-block mr-2">
+                                            Atsushi Tsukazaki
+                                            <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Atsushi%20Tsukazaki"
+                                               target="_blank" title="Follow Atsushi Tsukazaki" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                                <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                            </a></span><button onclick="toggleAuthors('authors-2008-05236v2')" class="text-blue-600 hover:underline text-xs ml-1">(show less)</button>
+                                    </span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:2008.05236v2</span>
+                                <span>Published: 2020-08-12</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.300</span>
+                                
+                                <a href="https://doi.org/10.1038/s43246-020-00059-1" target="_blank" class="text-blue-600 hover:underline">DOI</a>
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.mtrl-sci</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-2008-05236-2')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="2008.05236v2" data-title="Stabilization of a honeycomb lattice of IrO$_6$ octahedra in superlattices with ilmenite-type MnTiO$_3$"
+                                        data-authors="Kei Miura and Kohei Fujiwara and Kei Nakayama and Ryo Ishikawa and Naoya Shibata and Atsushi Tsukazaki" data-date="2020-08-12">Export to BibTeX</button>
+                                <div id="abstract-2008-05236-2" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>In the quest for quantum spin liquids, thin films are expected to open the way for the control of intricate magnetic interactions in actual materials by exploiting epitaxial strain and two-dimensionality. However, materials compatible with conventional thin-film growth methods have largely remained undeveloped. As a promising candidate towards the materialization of quantum spin liquids in thin films, we here present a robust ilmenite-type oxide with a honeycomb lattice of edge-sharing IrO$_6$ octahedra artificially stabilized by superlattice formation with an ilmenite-type antiferromagnetic oxide MnTiO$_3$. The stabilized sub-unit-cell-thick Mn-Ir-O layer is isostructural to MnTiO$_3$, having the atomic arrangement corresponding to ilmenite-type MnTiO$_3$ not discovered yet. By spin Hall magnetoresistance measurements, we found that antiferromagnetic ordering in the ilmenite Mn sublattice is suppressed by modified magnetic interactions in the MnO$_6$ planes via the IrO$_6$ planes. These findings lay the foundation for the creation of two-dimensional Kitaev candidate materials, accelerating the discovery of exotic physics and applications specific to quantum spin liquids.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">quantum spin liquid</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">quantum spin liquids</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+quantum%20spin%20liquids&paper_details=Promoting+keyword+'quantum%20spin%20liquids'+from+paper+2008.05236v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">ilmenite-type oxides</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+ilmenite-type%20oxides&paper_details=Promoting+keyword+'ilmenite-type%20oxides'+from+paper+2008.05236v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">honeycomb lattice</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+honeycomb%20lattice&paper_details=Promoting+keyword+'honeycomb%20lattice'+from+paper+2008.05236v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"While the user is interested in oxides and superconductivity, this paper focuses on stabilizing a honeycomb lattice for quantum spin liquids, a distinct area of research."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.564</span> -
+                                            <span class="italic text-gray-600">Z Zhong and Y Lu,</span>
+                                            <a href="https://www.sciencedirect.com/science/article/pii/B978012811166600011X" target="_blank" class="text-blue-600 hover:underline">First-principle study of metal oxide thin films:...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.538</span> -
+                                            <span class="italic text-gray-600">A Frano, B Keimer et al.,</span>
+                                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.111.106804" target="_blank" class="text-blue-600 hover:underline">Orbital control of noncollinear magnetic order in nickel...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.529</span> -
+                                            <span class="italic text-gray-600">Hanbit Oh, S. Raghu et al.,</span>
+                                            <a href="http://arxiv.org/abs/2506.18973v1" target="_blank" class="text-blue-600 hover:underline">High spin, low spin or gapped spins: magnetism in the...</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden  border-l-4 border-l-green-400 "
+                                 data-categories="cond-mat.mes-hall,cond-mat.str-el"
+                                 data-keywords="green's function"
+                                 data-score="0.3"
+                                 data-date="2020-08-12">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/2008.05544v2" target="_blank" class="hover:text-blue-600">Green's functions and DOS for some 2D lattices</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2008.05544v2&paper_details=Like%20paper%3A%20Green%27s%20functions%20and%20DOS%20for%20some%202D%20lattices" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-2008-05544v2">
+                                
+                                
+                                
+                                    <span class="inline-block mr-2">
+                                        Eugene Kogan
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Eugene%20Kogan"
+                                           target="_blank" title="Follow Eugene Kogan" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Godfrey Gumbs
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Godfrey%20Gumbs"
+                                           target="_blank" title="Follow Godfrey Gumbs" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:2008.05544v2</span>
+                                <span>Published: 2020-08-12</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.300</span>
+                                
+                                <a href="https://doi.org/10.4236/graphene.2021.101001" target="_blank" class="text-blue-600 hover:underline">DOI</a>
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.mes-hall</span><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.str-el</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-2008-05544-2')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="2008.05544v2" data-title="Green&#39;s functions and DOS for some 2D lattices"
+                                        data-authors="Eugene Kogan and Godfrey Gumbs" data-date="2020-08-12">Export to BibTeX</button>
+                                <div id="abstract-2008-05544-2" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>In this note we present the Green's functions and density of states for the most frequently encountered 2D lattices: square, triangular, honeycomb, kagome, and Lieb lattice. Though the results are well know, we hope that their derivation performed in a uniform way is of some pedagogical value.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">green's function</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Green's function</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Green%27s%20function&paper_details=Promoting+keyword+'Green%27s%20function'+from+paper+2008.05544v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">density of states</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+density%20of%20states&paper_details=Promoting+keyword+'density%20of%20states'+from+paper+2008.05544v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">2D lattices</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+2D%20lattices&paper_details=Promoting+keyword+'2D%20lattices'+from+paper+2008.05544v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"While the paper deals with electronic structure calculations (Green's functions and DOS), it focuses on lattice structures and lacks a direct connection to the previously liked materials or concepts like superconductivity, oxygen vacancies, or topological phases."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.466</span> -
+                                            <span class="italic text-gray-600">Y Lu, MW Haverkort et al.,</span>
+                                            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.115134" target="_blank" class="text-blue-600 hover:underline">Natural-orbital impurity solver and projection approach...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.463</span> -
+                                            <span class="italic text-gray-600">Kazue Matsuyama and Jeff Greensite,</span>
+                                            <a href="http://arxiv.org/abs/2507.01280v1" target="_blank" class="text-blue-600 hover:underline">D-wave condensates and the landscape of the 2D Hubbard model</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.437</span> -
+                                            <span class="italic text-gray-600">Xiao Liang,</span>
+                                            <a href="http://arxiv.org/abs/2507.01856v1" target="_blank" class="text-blue-600 hover:underline">Investigating the Fermi-Hubbard model by the...</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden  border-l-4 border-l-green-400 "
+                                 data-categories="cond-mat.mtrl-sci"
+                                 data-keywords="machine learning"
+                                 data-score="0.2"
+                                 data-date="2020-08-12">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/2008.05125v1" target="_blank" class="hover:text-blue-600">Prediction on Properties of Rare-earth 2-17-X Magnets Ce2Fe17-xCoxCN : A Combined Machine-learning and Ab-initio Study</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2008.05125v1&paper_details=Like%20paper%3A%20Prediction%20on%20Properties%20of%20Rare-earth%202-17-X%20Magnets%20Ce2Fe17-xCoxCN%20%3A%20A%20Combined%20Machine-learning%20and%20Ab-initio%20Study" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-2008-05125v1">
+                                
+                                
+                                
+                                    <span class="inline-block mr-2">
+                                        Anita Halder
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Anita%20Halder"
+                                           target="_blank" title="Follow Anita Halder" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Samir Rom
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Samir%20Rom"
+                                           target="_blank" title="Follow Samir Rom" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Aishwaryo Ghosh
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Aishwaryo%20Ghosh"
+                                           target="_blank" title="Follow Aishwaryo Ghosh" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Tanusri Saha-Dasgupta
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Tanusri%20Saha-Dasgupta"
+                                           target="_blank" title="Follow Tanusri Saha-Dasgupta" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:2008.05125v1</span>
+                                <span>Published: 2020-08-12</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.200</span>
+                                
+                                <a href="https://doi.org/10.1103/PhysRevApplied.14.034024" target="_blank" class="text-blue-600 hover:underline">DOI</a>
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.mtrl-sci</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-2008-05125-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="2008.05125v1" data-title="Prediction on Properties of Rare-earth 2-17-X Magnets Ce2Fe17-xCoxCN : A Combined Machine-learning and Ab-initio Study"
+                                        data-authors="Anita Halder and Samir Rom and Aishwaryo Ghosh and Tanusri Saha-Dasgupta" data-date="2020-08-12">Export to BibTeX</button>
+                                <div id="abstract-2008-05125-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>We employ a combination of machine learning and first-principles calculations to predict magnetic properties of rare-earth lean magnets. For this purpose, based on training set constructed out of experimental data, the machine is trained to make predictions on magnetic transition temperature (Tc), largeness of saturation magnetization (μ0Ms), and nature of the magnetocrystalline anisotropy (Ku). Subsequently, the quantitative values of μ0Ms and Ku of the yet-to-be synthesized compounds, screened by machine learning, are calculated by first-principles density functional theory. The applicability of the proposed technique of combined machine learning and first-principles calculations is demonstrated on 2-17-X magnets, Ce2Fe17-xCoxCN. Further to this study, we explore stability of the proposed compounds by calculating vacancy formation energy of small atom interstitials (N/C). Our study indicates a number of compounds in the proposed family, offers the possibility to become solution of cheap, and efficient permanent magnet.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">machine learning</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">rare-earth magnets</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+rare-earth%20magnets&paper_details=Promoting+keyword+'rare-earth%20magnets'+from+paper+2008.05125v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">machine learning</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+machine%20learning&paper_details=Promoting+keyword+'machine%20learning'+from+paper+2008.05125v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">density functional theory</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+density%20functional%20theory&paper_details=Promoting+keyword+'density%20functional%20theory'+from+paper+2008.05125v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"The paper focuses on rare-earth magnets and machine learning, which is a departure from the user's previous interests in superconductivity, oxygen vacancies, and topological materials."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.497</span> -
+                                            <span class="italic text-gray-600">Xiaoyang Chen, Donglai Feng et al.,</span>
+                                            <a href="https://www.nature.com/articles/s41467-024-53863-5" target="_blank" class="text-blue-600 hover:underline">Electronic and magnetic excitations in La3Ni2O7</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.480</span> -
+                                            <span class="italic text-gray-600">Ri He, Zhicheng Zhong et al.,</span>
+                                            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.106.174101" target="_blank" class="text-blue-600 hover:underline">Origin of negative thermal expansion and...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.458</span> -
+                                            <span class="italic text-gray-600">Y Lu, B Keimer et al.,</span>
+                                            <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.031014" target="_blank" class="text-blue-600 hover:underline">Site-selective probe of magnetic excitations in...</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden "
+                                 data-categories=""
+                                 data-keywords=""
+                                 data-score="0"
+                                 data-date="2020-08-05">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/2008.02289v3" target="_blank" class="hover:text-blue-600">Non-vanishing normal density in cold holographic superfluids</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2008.02289v3&paper_details=Like%20paper%3A%20Non-vanishing%20normal%20density%20in%20cold%20holographic%20superfluids" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-2008-02289v3">
+                                
+                                
+                                
+                                    <span class="inline-block mr-2">
+                                        Blaise Goutéraux
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Blaise%20Gout%C3%A9raux"
+                                           target="_blank" title="Follow Blaise Goutéraux" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Eric Mefford
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Eric%20Mefford"
+                                           target="_blank" title="Follow Eric Mefford" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:2008.02289v3</span>
+                                <span>Published: 2020-08-05</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.000</span>
+                                
+                                
+                                <div class="flex flex-wrap gap-1"></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-2008-02289-3')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="2008.02289v3" data-title="Non-vanishing normal density in cold holographic superfluids"
+                                        data-authors="Blaise Goutéraux and Eric Mefford" data-date="2020-08-05">Export to BibTeX</button>
+                                <div id="abstract-2008-02289-3" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>The low energy and finite temperature excitations of a $d+1$-dimensional system exhibiting superfluidity are well described by a hydrodynamic model with two fluid flows: a normal flow and a superfluid flow. In the vicinity of a quantum critical point, thermodynamics and transport in the system are expected to be controlled by the critical exponents and by the spectrum of irrelevant deformations away from the quantum critical point. Here, using gauge-gravity duality, we present the low temperature dependence of thermodynamic and charge transport coefficients at first order in the hydrodynamic derivative expansion in terms of the critical exponents. Special attention will be paid to the behavior of the charge density of the normal flow in systems with emergent infrared conformal and Lifshitz symmetries, parameterized by a Lifshitz dynamical exponent $z>1$. When $1\leq z<d+2$, we recover ($z=1$) and extend ($z>1$) previous results obtained by relativistic effective field theory techniques. Instead, when $z>d+2$, we show that the normal charge density becomes non-vanishing at zero temperature. An extended appendix generalizes these results to systems that violate hyperscaling as well as systems with generalized photon masses. Our results clarify previous work in the holographic literature and have relevance to recent experimental measurements of the superfluid density on cuprate superconductors.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"Could not be analyzed by LLM."</p>
+                                </div>
+                                
+                                
+                            </div>
+                        </article>
+                        
+                    </div>
+
+                    <!-- Pagination Container -->
+                    <div id="pagination-container" class="mt-8 flex justify-center items-center space-x-1">
+                        <!-- Pagination buttons will be dynamically inserted here -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function toggleAbstract(id) {
+            const element = document.getElementById(id);
+            const button = event.target;
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                button.textContent = 'Hide Abstract';
+            } else {
+                element.classList.add('hidden');
+                button.textContent = 'Show Abstract';
+            }
+        }
+
+        function toggleAuthors(id) {
+            const container = document.getElementById(id);
+            const collapsed = container.querySelector('.author-list-collapsed');
+            const expanded = container.querySelector('.author-list-expanded');
+
+            collapsed.classList.toggle('hidden');
+            expanded.classList.toggle('hidden');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Manual LaTeX Rendering
+            function renderLatexInElement(element) {
+                const treeWalker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+                    acceptNode: function(node) {
+                        return node.parentElement.tagName !== 'SCRIPT' && node.parentElement.tagName !== 'STYLE' ?
+                               NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+                    }
+                });
+                const nodes = [];
+                while (treeWalker.nextNode()) { nodes.push(treeWalker.currentNode); }
+                nodes.forEach((node) => {
+                    const text = node.nodeValue;
+                    const regex = /\$(.+?)\$/g;
+                    if (text.match(regex)) {
+                        const span = document.createElement('span');
+                        let lastIndex = 0;
+                        let match;
+                        while ((match = regex.exec(text)) !== null) {
+                            span.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+                            const mathSpan = document.createElement('span');
+                            try {
+                                katex.render(match[1], mathSpan, { throwOnError: false, displayMode: false });
+                                span.appendChild(mathSpan);
+                            } catch (e) {
+                                console.error('KaTeX error:', e);
+                                span.appendChild(document.createTextNode(match[0]));
+                            }
+                            lastIndex = regex.lastIndex;
+                        }
+                        span.appendChild(document.createTextNode(text.slice(lastIndex)));
+                        node.parentNode.replaceChild(span, node);
+                    }
+                });
+            }
+            renderLatexInElement(document.body);
+
+            // Store all paper articles in memory
+            const paperArticleElements = Array.from(document.querySelectorAll('.paper-article'));
+            const papersListContainer = document.getElementById('papers-list');
+
+            // --- State Variables ---
+            let activeFilters = { category: new Set(), keyword: new Set() };
+            let searchTerm = '';
+            let currentSortBy = 'score';
+            let currentPage = 1;
+            let itemsPerPage = 10;
+
+            // --- Main Display Function ---
+            function updateDisplay() {
+                // 1. Filter
+                let visibleArticles = paperArticleElements.filter(article => {
+                    const articleCategories = article.dataset.categories.split(',');
+                    const articleKeywords = article.dataset.keywords.split(',');
+                    const articleText = article.textContent.toLowerCase();
+                    const categoryMatch = activeFilters.category.size === 0 || Array.from(activeFilters.category).every(f => articleCategories.includes(f));
+                    const keywordMatch = activeFilters.keyword.size === 0 || Array.from(activeFilters.keyword).every(f => articleKeywords.includes(f));
+                    const searchMatch = searchTerm === '' || articleText.includes(searchTerm);
+                    return categoryMatch && keywordMatch && searchMatch;
+                });
+
+                // 2. Sort
+                visibleArticles.sort((a, b) => {
+                    if (currentSortBy === 'score') {
+                        return parseFloat(b.dataset.score) - parseFloat(a.dataset.score);
+                    } else if (currentSortBy === 'date') {
+                        return new Date(b.dataset.date) - new Date(a.dataset.date);
+                    }
+                    return 0;
+                });
+
+                // 3. Paginate
+                const totalPages = Math.ceil(visibleArticles.length / itemsPerPage);
+                if (currentPage > totalPages) {
+                    currentPage = totalPages || 1;
+                }
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const paginatedArticles = visibleArticles.slice(startIndex, endIndex);
+
+                // 4. Render
+                papersListContainer.innerHTML = '';
+                if (paginatedArticles.length === 0 && paperArticleElements.length > 0) {
+                    papersListContainer.innerHTML = '<div class="text-center py-10 bg-white rounded-lg shadow-sm"><p class="text-gray-600">No matching papers found.</p></div>';
+                } else {
+                    paginatedArticles.forEach(article => papersListContainer.appendChild(article));
+                }
+                renderPagination(totalPages);
+            }
+
+            // --- Pagination Rendering ---
+            function renderPagination(totalPages) {
+                const paginationContainer = document.getElementById('pagination-container');
+                paginationContainer.innerHTML = '';
+                if (totalPages <= 1) return;
+
+                function changePage(newPage) {
+                    currentPage = newPage;
+                    updateDisplay();
+                    const papersList = document.getElementById('papers-list');
+                    if(papersList) {
+                        papersList.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+
+                // Previous Button
+                const prevBtn = document.createElement('button');
+                prevBtn.innerHTML = '&laquo;';
+                prevBtn.className = 'pagination-btn px-3 py-1 border rounded-md bg-white hover:bg-gray-100 disabled:opacity-50';
+                prevBtn.disabled = currentPage === 1;
+                prevBtn.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        changePage(currentPage - 1);
+                    }
+                });
+                paginationContainer.appendChild(prevBtn);
+
+                // Page Number Buttons
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.textContent = i;
+                    pageBtn.className = 'pagination-btn px-3 py-1 border rounded-md bg-white hover:bg-gray-100';
+                    if (i === currentPage) {
+                        pageBtn.classList.add('active');
+                    }
+                    pageBtn.addEventListener('click', () => {
+                        changePage(i);
+                    });
+                    paginationContainer.appendChild(pageBtn);
+                }
+
+                // Next Button
+                const nextBtn = document.createElement('button');
+                nextBtn.innerHTML = '&raquo;';
+                nextBtn.className = 'pagination-btn px-3 py-1 border rounded-md bg-white hover:bg-gray-100 disabled:opacity-50';
+                nextBtn.disabled = currentPage === totalPages;
+                nextBtn.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        changePage(currentPage + 1);
+                    }
+                });
+                paginationContainer.appendChild(nextBtn);
+            }
+
+            // --- Event Listeners ---
+            document.getElementById('items-per-page').addEventListener('change', (e) => {
+                itemsPerPage = parseInt(e.target.value, 10);
+                currentPage = 1;
+                updateDisplay();
+            });
+
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                searchTerm = e.target.value.toLowerCase();
+                currentPage = 1;
+                updateDisplay();
+            });
+
+            document.getElementById('sort-container').addEventListener('click', (e) => {
+                const target = e.target.closest('.sort-btn');
+                if (!target) return;
+                document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+                target.classList.add('active');
+                currentSortBy = target.dataset.sortBy;
+                currentPage = 1;
+                updateDisplay();
+            });
+
+            document.getElementById('filter-container').addEventListener('click', (e) => {
+                const target = e.target.closest('.filter-btn');
+                if (!target) return;
+                const filterType = target.dataset.filterType;
+                const filterValue = target.dataset.filterValue;
+                target.classList.toggle('active');
+                if (activeFilters[filterType].has(filterValue)) {
+                    activeFilters[filterType].delete(filterValue);
+                } else {
+                    activeFilters[filterType].add(filterValue);
+                }
+                currentPage = 1;
+                updateDisplay();
+            });
+
+            document.getElementById('clear-filters').addEventListener('click', () => {
+                document.querySelectorAll('.control-btn.active').forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.sort-btn[data-sort-by="score"]').classList.add('active');
+                activeFilters.category.clear(); activeFilters.keyword.clear();
+                searchInput.value = ''; searchTerm = ''; currentSortBy = 'score';
+                currentPage = 1;
+                document.getElementById('items-per-page').value = 10;
+                itemsPerPage = 10;
+                updateDisplay();
+            });
+
+            // --- Initial Load ---
+            updateDisplay();
+
+            // --- Other Logic (Sidebar, BibTeX, etc.) ---
+            const sidebar = document.getElementById('sidebar');
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeSidebarBtn = document.getElementById('close-sidebar-btn');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const desktopHamburgerBtn = document.getElementById('desktop-hamburger-btn');
+            function showSidebar() { sidebar.classList.remove('-translate-x-full'); sidebarOverlay.classList.remove('hidden'); }
+            function hideSidebar() { sidebar.classList.add('-translate-x-full'); sidebarOverlay.classList.add('hidden'); }
+            hamburgerBtn.addEventListener('click', showSidebar);
+            if (desktopHamburgerBtn) {
+                desktopHamburgerBtn.addEventListener('click', showSidebar);
+            }
+            closeSidebarBtn.addEventListener('click', hideSidebar);
+            sidebarOverlay.addEventListener('click', hideSidebar);
+
+            function downloadFile(filename, content) {
+                const element = document.createElement('a');
+                element.setAttribute('href', 'data:application/x-bibtex;charset=utf-8,' + encodeURIComponent(content));
+                element.setAttribute('download', filename);
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
+            document.getElementById('papers-list').addEventListener('click', function(event) {
+                if (event.target.classList.contains('export-bibtex-btn')) {
+                    const button = event.target;
+                    const data = button.dataset;
+                    const year = data.date.substring(0, 4);
+                    const bibtexKey = `arXiv:${data.id}`;
+                    const bibtexContent = `@misc{${bibtexKey},\n` +
+                                        `      title        = {${data.title}},\n` +
+                                        `      author       = {${data.authors}},\n` +
+                                        `      year         = {${year}},\n` +
+                                        `      eprint       = {${data.id}},\n` +
+                                        `      archivePrefix = {arXiv},\n` +
+                                        `      primaryClass = {${button.closest('.paper-article').dataset.categories.split(',')[0]}}\n`+
+                                        `}`;
+                    downloadFile(`${data.id}.bib`, bibtexContent);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
