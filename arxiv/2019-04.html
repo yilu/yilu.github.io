@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arXiv Curator | 2025-02</title>
+    <title>arXiv Curator | 2019-04</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- KaTeX for LaTeX Rendering (Core Library Only) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMcAXPbeZQMNlbAEQZdjeEqQeeyLSpPDayciONa03urlgXHzX" crossorigin="anonymous">
@@ -82,7 +82,7 @@
                 <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Archives</h2>
                 <div class="space-y-2">
                     
-                    <details class="border border-gray-200 rounded-lg overflow-hidden" open>
+                    <details class="border border-gray-200 rounded-lg overflow-hidden" >
                         <summary class="flex items-center justify-between px-3 py-2 cursor-pointer text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100">
                             <span>2025</span>
                             <span class="text-xs text-gray-500">12 months</span>
@@ -182,7 +182,7 @@
                             <li>
                                 <a href="2025-02.html" class="block px-3 py-2 rounded-md text-sm font-medium
                                     
-                                        bg-blue-100 text-blue-700 font-semibold
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
                                     ">
                                     2025-02
                                 </a>
@@ -328,7 +328,7 @@
                         </ul>
                     </details>
                     
-                    <details class="border border-gray-200 rounded-lg overflow-hidden" >
+                    <details class="border border-gray-200 rounded-lg overflow-hidden" open>
                         <summary class="flex items-center justify-between px-3 py-2 cursor-pointer text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100">
                             <span>2019</span>
                             <span class="text-xs text-gray-500">4 months</span>
@@ -356,7 +356,7 @@
                             <li>
                                 <a href="2019-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
                                     
-                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                        bg-blue-100 text-blue-700 font-semibold
                                     ">
                                     2019-04
                                 </a>
@@ -640,7 +640,7 @@
 
                 <div class="max-w-7xl mx-auto">
                     <header class="mb-8">
-                        <h2 class="text-3xl font-bold text-gray-900">Papers for 2025-02</h2>
+                        <h2 class="text-3xl font-bold text-gray-900">Papers for 2019-04</h2>
                         <div class="text-sm text-gray-500 mt-2 space-y-1">
                             <p>Last updated: 2025-12-09 08:41:35 UTC.
                                
@@ -682,13 +682,25 @@
                                 <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Category:</h4>
                                 <div class="flex flex-wrap gap-2">
                                     
+                                        <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.stat-mech">cond-mat.stat-mech</button>
+                                    
                                         <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.str-el">cond-mat.str-el</button>
+                                    
+                                        <button class="control-btn filter-btn bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-gray-300" data-filter-type="category" data-filter-value="cond-mat.supr-con">cond-mat.supr-con</button>
                                     
                                 </div>
                             </div>
                             <div>
                                 <h4 class="text-sm font-semibold text-gray-700 mb-2">Filter by Keyword:</h4>
                                 <div class="flex flex-wrap gap-2">
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="anderson impurity model">anderson impurity model</button>
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="cuprate">cuprate</button>
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="hubbard model">hubbard model</button>
+                                    
+                                        <button class="control-btn filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200" data-filter-type="keyword" data-filter-value="quantum monte carlo">quantum monte carlo</button>
                                     
                                 </div>
                             </div>
@@ -701,71 +713,71 @@
                         
                         <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden "
                                  data-categories="cond-mat.str-el"
-                                 data-keywords=""
-                                 data-score="0.1"
-                                 data-date="2025-02-24">
+                                 data-keywords="anderson impurity model,quantum monte carlo"
+                                 data-score="0.7"
+                                 data-date="2019-04-29">
                             <div class="flex justify-between items-start gap-4">
                                  <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
-                                    <a href="https://arxiv.org/abs/2502.17572v1" target="_blank" class="hover:text-blue-600">Detecting emergent 1-form symmetries with quantum error correction</a>
+                                    <a href="https://arxiv.org/abs/1904.12582v2" target="_blank" class="hover:text-blue-600">Exact real-time dynamics of single-impurity Anderson model from a single-spin hybridization-expansion</a>
                                 </h3>
                                 <div class="flex-shrink-0">
                                     
-                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+2502.17572v1&paper_details=Like%20paper%3A%20Detecting%20emergent%201-form%20symmetries%20with%20quantum%20error%20correction" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+1904.12582v2&paper_details=Like%20paper%3A%20Exact%20real-time%20dynamics%20of%20single-impurity%20Anderson%20model%20from%20a%20single-spin%20hybridization-expansion" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
                                             <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
                                             Like
                                         </a>
                                     
                                 </div>
                             </div>
-                            <div class="text-sm text-gray-600 mb-4" id="authors-2502-17572v1">
+                            <div class="text-sm text-gray-600 mb-4" id="authors-1904-12582v2">
                                 
                                 
                                 
                                     <span class="inline-block mr-2">
-                                        Yu-Jie Liu
-                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Yu-Jie%20Liu"
-                                           target="_blank" title="Follow Yu-Jie Liu" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                        Patryk Kubiczek
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Patryk%20Kubiczek"
+                                           target="_blank" title="Follow Patryk Kubiczek" class="inline-block align-middle text-blue-400 hover:text-blue-600">
                                             <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
                                         </a></span><span class="inline-block mr-2">
-                                        Wen-Tao Xu
-                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Wen-Tao%20Xu"
-                                           target="_blank" title="Follow Wen-Tao Xu" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                        Alexey N. Rubtsov
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Alexey%20N.%20Rubtsov"
+                                           target="_blank" title="Follow Alexey N. Rubtsov" class="inline-block align-middle text-blue-400 hover:text-blue-600">
                                             <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
                                         </a></span><span class="inline-block mr-2">
-                                        Frank Pollmann
-                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Frank%20Pollmann"
-                                           target="_blank" title="Follow Frank Pollmann" class="inline-block align-middle text-blue-400 hover:text-blue-600">
-                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-                                        </a></span><span class="inline-block mr-2">
-                                        Michael Knap
-                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Michael%20Knap"
-                                           target="_blank" title="Follow Michael Knap" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                        Alexander I. Lichtenstein
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Alexander%20I.%20Lichtenstein"
+                                           target="_blank" title="Follow Alexander I. Lichtenstein" class="inline-block align-middle text-blue-400 hover:text-blue-600">
                                             <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
                                         </a></span>
                                 
                             </div>
                             <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-                                <span class="font-mono">arXiv:2502.17572v1</span>
-                                <span>Published: 2025-02-24</span>
-                                <span class="font-semibold text-blue-700">LLM Score: 0.100</span>
+                                <span class="font-mono">arXiv:1904.12582v2</span>
+                                <span>Published: 2019-04-29</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
                                 
-                                
+                                <a href="https://doi.org/10.21468/SciPostPhys.7.2.016" target="_blank" class="text-blue-600 hover:underline">DOI</a>
                                 <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.str-el</span></div>
                             </div>
                             <div class="mt-4">
-                                <button onclick="toggleAbstract('abstract-2502-17572-1')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button onclick="toggleAbstract('abstract-1904-12582-2')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
                                 <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
-                                        data-id="2502.17572v1" data-title="Detecting emergent 1-form symmetries with quantum error correction"
-                                        data-authors="Yu-Jie Liu and Wen-Tao Xu and Frank Pollmann and Michael Knap" data-date="2025-02-24">Export to BibTeX</button>
-                                <div id="abstract-2502-17572-1" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>Higher-from symmetries act on sub-dimensional spatial manifolds of a quantum system and they can emerge as an exact symmetry at low energies even when they are explicitly broken at the microscopic level, making them difficult to characterize. In this work, we propose a quantitative criterion for the existence of 1-form symmetries motivated by quantum error correction (QEC). We show that the loss of the emergent 1-form symmetry is an information-theoretic transition revealed from the ensemble of post-measurement states. We analytically determine the regimes in which a 1-form symmetry emerges in product states on one- and two-dimensional lattices. The latter can be solved by mapping the ensemble of post-measurement states to the partition sum of a random bond Ising model along the Nishimori line. In analytically intractable regimes, we demonstrate how to detect 1-form symmetries with a global Minimal-Weight Perfect Matching (MWPM) decoder and numerically examine the information-theoretic transition of the 1-form symmetry, including systems with $\mathbb{Z}_2$ topological order. As an application of our protocol, we show that once the 1-form symmetry is detected to exist, a topological quantum phase transitions characterized by the spontaneous breaking of the 1-form symmetry can be accurately detected by a disorder parameter. By exploiting ideas from quantum error correction, our work develops an information-theoretic criterion for emergent 1-from symmetries, which furthers our understanding of exotic symmetries and offers practical routes toward their characterization.</p></div>
+                                        data-id="1904.12582v2" data-title="Exact real-time dynamics of single-impurity Anderson model from a single-spin hybridization-expansion"
+                                        data-authors="Patryk Kubiczek and Alexey N. Rubtsov and Alexander I. Lichtenstein" data-date="2019-04-29">Export to BibTeX</button>
+                                <div id="abstract-1904-12582-2" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>In this work we introduce a modified real-time continuous-time hybridization-expansion quantum Monte Carlo solver for a time-dependent single-orbital Anderson impurity model: CT-1/2-HYB-QMC. In the proposed method the diagrammatic expansion is performed only for one out of the two spin channels, while the resulting effective single-particle problem for the other spin is solved semi-analytically for each expansion diagram. CT-1/2-HYB-QMC alleviates the dynamical sign problem by reducing the order of sampled diagrams and makes it possible to reach twice as long time scales in comparison to the standard CT-HYB method. We illustrate the new solver by calculating an electric current through impurity in paramagnetic and spin-polarized cases.</p></div>
                             </div>
                             <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">anderson impurity model</span><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">quantum monte carlo</span></div>
+                                </div>
                                 
                                 
                                 <div>
                                     <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
                                     <div class="flex flex-wrap gap-2 items-center">
-                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Emergent 1-form symmetries</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Emergent%201-form%20symmetries&paper_details=Promoting+keyword+'Emergent%201-form%20symmetries'+from+paper+2502.17572v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Quantum error correction</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Quantum%20error%20correction&paper_details=Promoting+keyword+'Quantum%20error%20correction'+from+paper+2502.17572v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Information-theoretic transition</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Information-theoretic%20transition&paper_details=Promoting+keyword+'Information-theoretic%20transition'+from+paper+2502.17572v1" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">CT-1/2-HYB-QMC</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+CT-1/2-HYB-QMC&paper_details=Promoting+keyword+'CT-1/2-HYB-QMC'+from+paper+1904.12582v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">Anderson impurity model</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+Anderson%20impurity%20model&paper_details=Promoting+keyword+'Anderson%20impurity%20model'+from+paper+1904.12582v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">real-time dynamics</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+real-time%20dynamics&paper_details=Promoting+keyword+'real-time%20dynamics'+from+paper+1904.12582v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
                                     </div>
                                 </div>
                                 
@@ -774,7 +786,7 @@
                                 
                                 <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
                                     <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
-                                    <p class="text-sm text-blue-900 italic">"This paper focuses on theoretical aspects of emergent symmetries and quantum error correction, which is a departure from the user's previously liked papers that are more focused on material science, superconductivity, and topological materials."</p>
+                                    <p class="text-sm text-blue-900 italic">"The paper introduces a new quantum Monte Carlo solver for the Anderson impurity model, which aligns with the user's interest in efficient solvers for correlated electron systems and dynamical mean-field theory."</p>
                                 </div>
                                 
                                 
@@ -785,27 +797,244 @@
                                         
                                         
                                         <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
-                                            <span class="font-medium text-gray-700">Similarity: 0.504</span> -
-                                            <span class="italic text-gray-600">Christian Reinmoser, Annabelle Bohrdt et al.,</span>
-                                            <a href="http://arxiv.org/abs/2506.11227v1" target="_blank" class="text-blue-600 hover:underline">Optimized Gutzwiller Projected States for Doped...</a>
+                                            <span class="font-medium text-gray-700">Similarity: 0.611</span> -
+                                            <span class="italic text-gray-600">Y Lu, MW Haverkort et al.,</span>
+                                            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.90.085102" target="_blank" class="text-blue-600 hover:underline">Efficient real-frequency solver for dynamical mean-field theory</a>
                                         </div>
                                         
                                     
                                         
                                         
                                         <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
-                                            <span class="font-medium text-gray-700">Similarity: 0.465</span> -
-                                            <span class="italic text-gray-600">E. Langmann and J. Lenells,</span>
-                                            <a href="http://arxiv.org/abs/2506.16503v1" target="_blank" class="text-blue-600 hover:underline">Mixed phases in a Fermi--Hubbard model describing altermagnetism</a>
+                                            <span class="font-medium text-gray-700">Similarity: 0.608</span> -
+                                            <span class="italic text-gray-600">Y Lu, MW Haverkort et al.,</span>
+                                            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.115134" target="_blank" class="text-blue-600 hover:underline">Natural-orbital impurity solver and projection approach...</a>
                                         </div>
                                         
                                     
                                         
                                         
                                         <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
-                                            <span class="font-medium text-gray-700">Similarity: 0.438</span> -
-                                            <span class="italic text-gray-600">Lavoisier Wah, Flore K. Kunst et al.,</span>
-                                            <a href="http://arxiv.org/abs/2506.11222v1" target="_blank" class="text-blue-600 hover:underline">Many-Body Neural Network Wavefunction for a...</a>
+                                            <span class="font-medium text-gray-700">Similarity: 0.582</span> -
+                                            <span class="italic text-gray-600">Yi Lu and Maurits W Haverkort,</span>
+                                            <a href="https://link.springer.com/article/10.1140/epjst/e2017-70042-4" target="_blank" class="text-blue-600 hover:underline">Exact diagonalization as an impurity solver in dynamical...</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden "
+                                 data-categories="cond-mat.supr-con,cond-mat.stat-mech,cond-mat.str-el"
+                                 data-keywords="cuprate"
+                                 data-score="0.7"
+                                 data-date="2019-04-29">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/1904.12453v2" target="_blank" class="hover:text-blue-600">An attempt to settle the one-component versus two-component debate in Cuprate high-$T_c$ superconductors</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+1904.12453v2&paper_details=Like%20paper%3A%20An%20attempt%20to%20settle%20the%20one-component%20versus%20two-component%20debate%20in%20Cuprate%20high-%24T_c%24%20superconductors" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-1904-12453v2">
+                                
+                                
+                                
+                                    <span class="inline-block mr-2">
+                                        Navinder Singh
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Navinder%20Singh"
+                                           target="_blank" title="Follow Navinder Singh" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:1904.12453v2</span>
+                                <span>Published: 2019-04-29</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.700</span>
+                                
+                                
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.supr-con</span><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.stat-mech</span><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.str-el</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-1904-12453-2')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="1904.12453v2" data-title="An attempt to settle the one-component versus two-component debate in Cuprate high-$T_c$ superconductors"
+                                        data-authors="Navinder Singh" data-date="2019-04-29">Export to BibTeX</button>
+                                <div id="abstract-1904-12453-2" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>Related to the electronic structure of cuprate high-Tc superconductors there are two prevailing views: In one view, Pines and collaborators argue that cuprates consist of two electronic subsystems: one with localized spins and the other having itinerant character. Contrary to that, Phil Anderson has argued for one-component or one-band model for cuprates. Thus, a very natural question arrises: What is the actual electronic system in cuprates? Are these two-component or one-component systems? After a careful consideration of both the views, we argue in favor of one-component or Andersonian view. The key lies in the dual character of electrons in narrow d bands, and we put forward a semiclassical model using which we could quantitatively account for oxygen NMR shift data in $La_{2-x}Sr_xCuO_4$ within the single component view.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">cuprate</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">cuprate superconductors</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+cuprate%20superconductors&paper_details=Promoting+keyword+'cuprate%20superconductors'+from+paper+1904.12453v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">electronic structure</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+electronic%20structure&paper_details=Promoting+keyword+'electronic%20structure'+from+paper+1904.12453v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">one-component model</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+one-component%20model&paper_details=Promoting+keyword+'one-component%20model'+from+paper+1904.12453v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"The paper discusses the electronic structure of cuprate superconductors, a topic related to previously liked papers on cuprates and their electronic properties."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.517</span> -
+                                            <span class="italic text-gray-600">Feng-Feng Song, Alexander Wietek et al.,</span>
+                                            <a href="http://arxiv.org/abs/2506.16068v1" target="_blank" class="text-blue-600 hover:underline">Superfluid dome in the spatially modulated...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.516</span> -
+                                            <span class="italic text-gray-600">M Minola, M Le Tacon et al.,</span>
+                                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.217003" target="_blank" class="text-blue-600 hover:underline">Collective nature of spin excitations in superconducting...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.507</span> -
+                                            <span class="italic text-gray-600">Dachuan Chen, Zhicheng Zhong et al.,</span>
+                                            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.106.045105" target="_blank" class="text-blue-600 hover:underline">Magnetism in doped infinite-layer  studied by combined...</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                        <article class="paper-article bg-white p-6 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden "
+                                 data-categories="cond-mat.str-el"
+                                 data-keywords="hubbard model"
+                                 data-score="0.5"
+                                 data-date="2019-04-30">
+                            <div class="flex justify-between items-start gap-4">
+                                 <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-1">
+                                    <a href="https://arxiv.org/abs/1904.13175v2" target="_blank" class="hover:text-blue-600">From quantum anomalous Hall phases to topological metals in interacting decorated honeycomb lattices</a>
+                                </h3>
+                                <div class="flex-shrink-0">
+                                    
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Like%3A+1904.13175v2&paper_details=Like%20paper%3A%20From%20quantum%20anomalous%20Hall%20phases%20to%20topological%20metals%20in%20interacting%20decorated%20honeycomb%20lattices" target="_blank" class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition-colors">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+                                            Like
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-4" id="authors-1904-13175v2">
+                                
+                                
+                                
+                                    <span class="inline-block mr-2">
+                                        Manuel Fernandez Lopez
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Manuel%20Fernandez%20Lopez"
+                                           target="_blank" title="Follow Manuel Fernandez Lopez" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span><span class="inline-block mr-2">
+                                        Jaime Merino
+                                        <a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Follow+Author%3A+Jaime%20Merino"
+                                           target="_blank" title="Follow Jaime Merino" class="inline-block align-middle text-blue-400 hover:text-blue-600">
+                                            <svg class="w-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 12c0-1.1.9-2 2-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM17 12a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+                                        </a></span>
+                                
+                            </div>
+                            <div class="text-xs text-gray-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                                <span class="font-mono">arXiv:1904.13175v2</span>
+                                <span>Published: 2019-04-30</span>
+                                <span class="font-semibold text-blue-700">LLM Score: 0.500</span>
+                                
+                                <a href="https://doi.org/10.1103/PhysRevB.100.075154" target="_blank" class="text-blue-600 hover:underline">DOI</a>
+                                <div class="flex flex-wrap gap-1"><span class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded">cond-mat.str-el</span></div>
+                            </div>
+                            <div class="mt-4">
+                                <button onclick="toggleAbstract('abstract-1904-13175-2')" class="text-xs text-blue-600 font-semibold hover:underline">Show Abstract</button>
+                                <button class="export-bibtex-btn text-xs text-purple-600 font-semibold hover:underline ml-4"
+                                        data-id="1904.13175v2" data-title="From quantum anomalous Hall phases to topological metals in interacting decorated honeycomb lattices"
+                                        data-authors="Manuel Fernandez Lopez and Jaime Merino" data-date="2019-04-30">Export to BibTeX</button>
+                                <div id="abstract-1904-13175-2" class="hidden mt-3 text-sm text-gray-700 prose prose-sm max-w-none border-t border-gray-200 pt-3"><p>An analysis of the stability of topological states induced by Coulomb repulsion on decorated honeycomb lattices is presented. Based on a mean-field treatment of a spinless extended Hubbard model on the decorated honeycomb lattice we show how the quantum anomalous Hall (QAH) phase is a robust topological phase which emerges at various electron fillings and involves either quadratic band crossing points (QBCP) or Dirac points of the bands. The topological QAH phase is also found to be most stable against thermal fluctuations up to moderate temperatures when the Coulomb repulsion is maximally frustrated. We show how a topological metal can be induced from the QAH by electron doping the system in a broad electron doping range. Electrons on the Fermi surface of such metallic states are characterized by having a non-zero Berry phase which gives rise to a non-zero intrinsic quantum Hall conductivity.</p></div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4 space-y-3">
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Matching Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2"><span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">hubbard model</span></div>
+                                </div>
+                                
+                                
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Suggested Keywords:</h4>
+                                    <div class="flex flex-wrap gap-2 items-center">
+                                        <span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">quantum anomalous Hall phase</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+quantum%20anomalous%20Hall%20phase&paper_details=Promoting+keyword+'quantum%20anomalous%20Hall%20phase'+from+paper+1904.13175v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">decorated honeycomb lattices</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+decorated%20honeycomb%20lattices&paper_details=Promoting+keyword+'decorated%20honeycomb%20lattices'+from+paper+1904.13175v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span><span class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium rounded-full"><span class="px-2.5 py-0.5">topological metal</span><a href="https://github.com/yilu/arxiv-curator/issues/new?template=feedback.yml&title=Promote+Keyword%3A+topological%20metal&paper_details=Promoting+keyword+'topological%20metal'+from+paper+1904.13175v2" target="_blank" title="Promote this keyword" class="mr-1.5 h-full inline-flex items-center justify-center hover:bg-purple-200 rounded-full w-5 h-5"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg></a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-blue-800 mb-2">LLM Reasoning</h4>
+                                    <p class="text-sm text-blue-900 italic">"While the paper discusses topological phases, a previously liked paper also mentions topological materials, suggesting some overlap, but the specific materials and phenomena differ."</p>
+                                </div>
+                                
+                                
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <h4 class="text-xs font-semibold text-gray-600 mb-2">Because you liked:</h4>
+                                    <div class="space-y-1">
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.582</span> -
+                                            <span class="italic text-gray-600">YX Zhao, Shengyuan A Yang et al.,</span>
+                                            <a href="https://arxiv.org/abs/2005.14500" target="_blank" class="text-blue-600 hover:underline">Topological second-order spin-3/2 liquids with hinge Fermi arcs</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.558</span> -
+                                            <span class="italic text-gray-600">Wen O. Wang, Thomas P. Devereaux et al.,</span>
+                                            <a href="http://arxiv.org/abs/2506.15770v1" target="_blank" class="text-blue-600 hover:underline">Probing the pseudogap and beyond: examining...</a>
+                                        </div>
+                                        
+                                    
+                                        
+                                        
+                                        <div class="reason-card text-xs text-gray-500 p-2 rounded-md">
+                                            <span class="font-medium text-gray-700">Similarity: 0.547</span> -
+                                            <span class="italic text-gray-600">YX Zhao and Y Lu,</span>
+                                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.056401" target="_blank" class="text-blue-600 hover:underline">-Symmetric Real Dirac Fermions and Semimetals</a>
                                         </div>
                                         
                                     
