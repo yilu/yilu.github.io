@@ -13,9 +13,19 @@
         .prose { max-width: 65ch; }
         .prose p { margin-top: 0; margin-bottom: 1em; }
         .reason-card { transition: background-color 0.2s ease-in-out; }
-        .reason-card:hover { background-color: #f0f9ff; }
+        .reason-card:hover { background-color: var(--brand-50); }
+        :root {
+            --brand-50: #f8f1f7;
+            --brand-100: #f2e7f0;
+            --brand-200: #e4cde1;
+            --brand-400: #b072aa;
+            --brand-600: #8a4487;
+            --brand-700: #7a3265;
+            --brand-800: #652754;
+            --brand-900: #512147;
+        }
         .control-btn.active {
-            background-color: #2563eb;
+            background-color: var(--brand-700);
             color: white;
             box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
         }
@@ -23,11 +33,25 @@
             min-width: 2.5rem; /* 40px */
         }
         .pagination-btn.active {
-            background-color: #2563eb;
-            border-color: #2563eb;
+            background-color: var(--brand-700);
+            border-color: var(--brand-700);
             color: white;
             font-weight: 600;
         }
+        /* Purple theme overrides */
+        .text-blue-400 { color: var(--brand-400) !important; }
+        .text-blue-600 { color: var(--brand-600) !important; }
+        .text-blue-700 { color: var(--brand-700) !important; }
+        .text-blue-800 { color: var(--brand-800) !important; }
+        .text-blue-900 { color: var(--brand-900) !important; }
+        .hover\:text-blue-600:hover { color: var(--brand-600) !important; }
+        .hover\:text-blue-700:hover { color: var(--brand-700) !important; }
+        .bg-blue-50 { background-color: var(--brand-50) !important; }
+        .bg-blue-100 { background-color: var(--brand-100) !important; }
+        .bg-blue-200 { background-color: var(--brand-200) !important; }
+        .hover\:bg-blue-200:hover { background-color: var(--brand-200) !important; }
+        .border-blue-200 { border-color: var(--brand-200) !important; }
+        .focus\:ring-blue-500:focus { --tw-ring-color: var(--brand-600) !important; }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +72,7 @@
         <div class="relative flex min-h-screen">
             <!-- Sidebar Navigation (Now an overlay on all screen sizes) -->
             <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
-            <nav id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 p-4 md:p-6 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <nav id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 p-4 md:p-6 transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
                 <div class="flex items-center justify-between mb-6">
                     <h1 class="text-2xl font-bold text-gray-900">arXiv Curator</h1>
                     <button id="close-sidebar-btn" class="p-2">
@@ -56,405 +80,182 @@
                     </button>
                 </div>
                 <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Archives</h2>
-                <ul class="space-y-2">
+                <div class="space-y-2">
                     
-                    <li>
-                        <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                    <details class="border border-gray-200 rounded-lg overflow-hidden" open>
+                        <summary class="flex items-center justify-between px-3 py-2 cursor-pointer text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100">
+                            <span>2025</span>
+                            <span class="text-xs text-gray-500">12 months</span>
+                        </summary>
+                        <ul class="space-y-1 px-2 pb-2 pt-1">
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-12
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-11.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-12
+                                </a>
+                            </li>
                             
-                                bg-blue-100 text-blue-700 font-semibold
-                            ">
-                            2025-11
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-11.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        bg-blue-100 text-blue-700 font-semibold
+                                    ">
+                                    2025-11
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-10
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-10
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-09
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-08.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-09
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-08
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-08.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-08
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-07
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-07
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-06
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-06
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-05
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-05
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-04
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-03.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-04
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-03
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-02.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-03.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-03
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-02
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2025-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-02.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-02
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2025-01
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2024-11.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2025-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2025-01
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2024-11
-                        </a>
-                    </li>
+                        </ul>
+                    </details>
                     
-                    <li>
-                        <a href="2024-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                    <details class="border border-gray-200 rounded-lg overflow-hidden" >
+                        <summary class="flex items-center justify-between px-3 py-2 cursor-pointer text-sm font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100">
+                            <span>2024</span>
+                            <span class="text-xs text-gray-500">5 months</span>
+                        </summary>
+                        <ul class="space-y-1 px-2 pb-2 pt-1">
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2024-10
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2024-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2024-11.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2024-11
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2024-09
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2024-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2024-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2024-10
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2024-07
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2024-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2024-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2024-09
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2024-05
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2020-12.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2024-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2024-07
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2020-12
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2020-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                            <li>
+                                <a href="2024-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
+                                    
+                                        text-gray-600 hover:bg-gray-100 hover:text-gray-900
+                                    ">
+                                    2024-05
+                                </a>
+                            </li>
                             
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2020-10
-                        </a>
-                    </li>
+                        </ul>
+                    </details>
                     
-                    <li>
-                        <a href="2020-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2020-09
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2020-08.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2020-08
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2020-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2020-07
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2020-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2020-06
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2020-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2020-05
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2019-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2019-06
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2019-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2019-05
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2019-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2019-04
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2019-02.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2019-02
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2015-06.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2015-06
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2014-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2014-05
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2012-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2012-04
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2011-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2011-01
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2009-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2009-10
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2009-09.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2009-09
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2009-07.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2009-07
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2008-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2008-10
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2008-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2008-05
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2008-04.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2008-04
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2005-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2005-10
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2002-10.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2002-10
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="2001-01.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            2001-01
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="1999-11.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            1999-11
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="1998-12.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            1998-12
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="1998-05.html" class="block px-3 py-2 rounded-md text-sm font-medium
-                            
-                                text-gray-600 hover:bg-gray-100 hover:text-gray-900
-                            ">
-                            1998-05
-                        </a>
-                    </li>
-                    
-                </ul>
+                </div>
             </nav>
 
             <!-- Main Content -->
@@ -468,9 +269,9 @@
                     <header class="mb-8">
                         <h2 class="text-3xl font-bold text-gray-900">Papers for 2025-11</h2>
                         <div class="text-sm text-gray-500 mt-2 space-y-1">
-                            <p>Last updated: 2025-12-04 05:16:44 UTC.
+                            <p>Last updated: 2025-12-10 05:17:51 UTC.
                                
-                                    <span class="text-green-600 font-semibold">Added 15 new papers.</span>
+                                    <span class="text-green-600 font-semibold">Added 13 new papers.</span>
                                
                             </p>
                             
