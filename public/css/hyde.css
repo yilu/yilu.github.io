@@ -395,3 +395,11 @@ a.sidebar-nav-item:focus {
 .circular-image {
   border-radius:  50%;
 }
+
+/* News expandable entries */
+details > summary {
+  cursor: pointer;
+}
+details > summary::marker {
+  font-size: 0.65em;
+}
