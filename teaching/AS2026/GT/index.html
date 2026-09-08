@@ -11,7 +11,7 @@
 
   <title>
     
-      AI for Physics Science &middot; Yi Lu
+      Group Theory and its Applications &middot; Yi Lu
     
   </title>
 
@@ -73,7 +73,7 @@
       
         
           
-          <a class="sidebar-nav-item active" href="/teaching/AIP/">AI for Physics Science</a>%}
+          <a class="sidebar-nav-item" href="/teaching/AIP/">AI for Physics Science</a>%}
           
         
       
@@ -85,7 +85,7 @@
       
         
           
-          <a class="sidebar-nav-item" href="/teaching/AS2026/GT/">Group Theory and its Applications</a>%}
+          <a class="sidebar-nav-item active" href="/teaching/AS2026/GT/">Group Theory and its Applications</a>%}
           
         
       
@@ -134,62 +134,58 @@
 
     <div class="content container">
       <div class="page">
-  <h1 class="page-title">AI for Physics Science</h1>
+  <h1 class="page-title">Group Theory and its Applications</h1>
   <p><br /></p>
-<h2 id="神经量子态-nqs-的入门与实践">神经量子态 (NQS) 的入门与实践</h2>
 
-<h3 id="项目简介">项目简介</h3>
+<h2 id="group-theory-and-its-applications-autumn-2026--群论及其应用"><span style="color: red">Group Theory and its Applications, Autumn 2026 / 群论及其应用</span></h2>
 
-<p>量子多体问题是现代凝聚态物理与量子化学研究的核心。由于希尔伯特空间的维度随粒子数呈指数级增长，传统的数值方法在处理大规模系统时面临严峻挑战。本项目作为“AI for Physics Science”课程的组成部分，旨在介绍如何利用<strong>人工神经网络 (Artificial Neural Networks)</strong> 作为变分多体波函数的拟设，获得量子多体系统的基态和动力学性质。我们将结合理论基础与代码实践，从传统的计算物理方法出发，逐步过渡到现代基于深度学习的数值方案。</p>
+<h3 id="课程信息">课程信息：</h3>
 
-<h3 id="核心内容">核心内容</h3>
-
-<p>本课程模块拟涵盖以下三个阶段：</p>
-<ol>
-  <li>量子多体理论与传统方法回顾：
-    <ul>
-      <li>精确对角化 (Exact Diagonalization)：理解小尺寸系统的全谱与基态。</li>
-      <li>张量网络 (Tensor Networks)：以矩阵乘积态 (MPS) 为核心，学习 DMRG 等算法。</li>
-    </ul>
-  </li>
-  <li>神经量子态 (NQS) 理论：
-    <ul>
-      <li>神经网络如何表示波函数（变分波函数的参数化）。</li>
-      <li>限制玻尔兹曼机 (RBM) 与深度神经网络在自旋模型中的应用。</li>
-      <li>变分蒙特卡洛 (VMC) 与随机重整化 (SR) 优化算法。</li>
-    </ul>
-  </li>
-  <li>实践与前沿：
-    <ul>
-      <li>利用开源工具复现领域内的经典论文。</li>
-      <li>处理费米子符号问题与激发态计算。</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="实践工具-get-started">实践工具 (Get Started)</h3>
-
-<p>本项目依托学院<a href="run.nju.edu.cn">云端算力</a>平台，采用 Python 作为主要编程语言。建议同学们先行安装并熟悉以下核心软件包，它们将支撑起我们的项目实践。可采用<a href="https://yilu.me/teaching/AIP/scripts/install_nqs.sh">此脚本</a>安装。</p>
+<h4 id="上课时间及地点-3-18-周">上课时间及地点 (3-18 周)：</h4>
 <ul>
-  <li><a href="https://www.netket.org/">NetKet</a>：
+  <li>线下教学：
     <ul>
-      <li>基于 JAX 构建的机器学习框架，专门用于实现神经量子态 (NQS)及相关计算。它是我们本项目的核心实践平台。建议阅读相关<a href="https://scipost.org/10.21468/SciPostPhysCodeb.7">论文</a>及其<a href="https://netket.readthedocs.io">文档</a>。NetKet分为cpu和gpu版本，可参考以上安装脚本，按需选择安装。</li>
+      <li>周三 第 5-6 节，逸夫馆 1-104</li>
+      <li>周五 第 5-6 节，逸夫馆 1-104</li>
     </ul>
   </li>
-  <li>用于精确对角化的<a href="https://weinbe58.github.io/QuSpin/">QuSpin</a>与DMRG的<a href="https://tenpy.readthedocs.io/">TeNPy</a>。</li>
 </ul>
 
-<h3 id="参考资料">参考资料</h3>
-
-<h4 id="经典nqs论文">经典NQS论文</h4>
+<h4 id="课程参考资料">课程参考资料：</h4>
 <ul>
-  <li>Carleo, G., &amp; Troyer, M. Solving the quantum many-body problem with artificial neural networks. <em>Science</em>, 355(6325), 602-606 (2017).</li>
+  <li>课程讲义主要参考 Greg Moore, <a href="https://www.physics.rutgers.edu/~gmoore/618Spring2023/GroupTheory-Spring2023.html"><em>Abstract Group Theory</em></a></li>
+  <li>其他建议阅读的参考书
+    <ul>
+      <li>Zee, <em>Group Theory in a Nutshell for Physicists</em>, Princeton Univ. Press, 2016（较简单，适合入门）</li>
+      <li>Dresselhaus, Dresselhaus, Jorio, <em>Group Theory: Application to the Physics of Condensed Matter</em>, Springer 2008（包含较多物理应用实例）</li>
+      <li>陶瑞宝，《物理学中的群论》，高等教育出版社，2011（常用中文教材）</li>
+      <li>马中骐，《物理学中的群论》，科学出版社，2006（常用中文教材）</li>
+      <li>陈金全，《群表示论的新途径》，上海科学技术出版社，1984（南京大学）</li>
+    </ul>
+  </li>
 </ul>
 
-<h4 id="课程资源">课程资源</h4>
+<h3 id="课程讲义及资料">课程讲义及资料：</h3>
 <ul>
-  <li>随项目进行更新。</li>
+  <li><span style="color: gray">随课程进度更新。往期课程讲义见下方“往期课程”，可供提前预习参考。</span></li>
 </ul>
+
+<h3 id="习题-共十次">习题 (共十次)：</h3>
+<ul>
+  <li><span style="color: gray">随课程进度更新。</span></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="往期课程">往期课程：</h3>
+<ul>
+  <li><a href="https://yilu.me/teaching/archive/AS2025/GT/">Autumn 2025 - Group Theory and its Applications</a></li>
+  <li><a href="https://yilu.me/teaching/archive/AS2024/GT/">Autumn 2024 - Group Theory and its Applications</a></li>
+  <li><a href="https://yilu.me/teaching/archive/AS2023/GT/">Autumn 2023 - Group Theory and its Applications</a></li>
+  <li><a href="https://yilu.me/teaching/archive/AS2022/GT/">Autumn 2022 - Group Theory and its Applications</a></li>
+</ul>
+
+<p><span style="color: gray">往期页面仅保留课程讲义，习题与解答不公开。各年度内容与顺序可能与本学期有所不同，仅供参考。</span></p>
 
 </div>
 
